@@ -25,3 +25,45 @@ fullSlidePlot(outputId, ..., menu = NULL, center = FALSE,
 \description{
 Use plot as background
 }
+\examples{
+library(shiny)
+
+ui <- fullPage(
+  opts = list(sectionsColor = c('#4BBFC3', '#7BAABE')),
+  fullSection(h1("Full section plots"), center = TRUE),
+  fullSectionPlot(
+    "myPlot2",
+    center = TRUE,
+    fullContainer(
+      h2("With a title")
+    )
+  ),
+  fullSectionPlot(
+    "myPlot",
+    center = TRUE,
+    fullContainer(
+      h3("Layer anything you want"),
+      selectInput(
+        "select",
+        "Choose y",
+        choices = c("mpg", "drat", "wt")
+      )
+    )
+  )
+)
+
+server <- function(input, output){
+
+  output$myPlot <- renderPlot({
+    plot(1:nrow(mtcars), mtcars[[input$select]])
+  })
+
+  output$myPlot2 <- renderPlot({
+    plot(1:nrow(mtcars), mtcars[[input$select]])
+  })
+
+}
+
+shinyApp(ui, server)
+
+}
