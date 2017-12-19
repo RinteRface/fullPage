@@ -68,6 +68,7 @@ Valid \code{opts}:
 }
 }
 \examples{
+\dontrun{
 library(shiny)
 
 options <- list(
@@ -79,7 +80,8 @@ ui <- fullPage(
   menu = c("Full Page" = "link1",
            "Sections" = "link2",
            "Slides" = "section3",
-           "backgrounds" = "section4"),
+           "backgrounds" = "section4",
+           "Background Slides" = "section5"),
   opts = options,
   fullSection(
     center = TRUE,
@@ -126,6 +128,7 @@ ui <- fullPage(
   fullSectionPlot(
     menu = "section4",
     "fp",
+    h3("Background plots"),
     fullContainer(
       sliderInput(
         "fpInput",
@@ -134,6 +137,17 @@ ui <- fullPage(
         max = 100,
         value = 74
       )
+    )
+  ),
+  fullSection(
+    menu = "section5",
+    fullSlidePlot(
+      "slideSectionPlot1",
+      center = TRUE,
+      h3("Slide background plot")
+    ),
+    fullSlidePlot(
+      "slideSectionPlot2"
     )
   )
 )
@@ -165,8 +179,17 @@ server <- function(input, output){
       fullContainer(...)
     )"
   })
+
+  output$slideSectionPlot1 <- renderPlot({
+    hist(rnorm(50, 1, 20))
+  })
+
+  output$slideSectionPlot2 <- renderPlot({
+    hist(rnorm(50, 1, 25))
+  })
 }
 
 shinyApp(ui, server)
+}
 
 }

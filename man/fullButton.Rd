@@ -9,11 +9,9 @@ fullButton(..., outline = FALSE, clear = FALSE, tag = shiny::a())
 \arguments{
 \item{...}{any other element}
 
-\item{clear}{if \code{TRUE} builds clear button.}
+\item{outline, clear}{set outline or clear button.}
 
 \item{tag}{button tag, generally \code{a} or \code{button}.}
-
-\item{outine}{if \code{TRUE} builds button outline.}
 }
 \description{
 Add a button

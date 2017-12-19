@@ -1,5 +1,7 @@
 #' Add grid elements
 #'
+#' @param ... any element.
+#'
 #' @rdname fullGrid
 #' @export
 fullRow <- function(...){

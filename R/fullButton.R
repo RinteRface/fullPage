@@ -1,7 +1,6 @@
 #' Add a button
 #'
-#' @param outine if \code{TRUE} builds button outline.
-#' @param clear if \code{TRUE} builds clear button.
+#' @param outline,clear set outline or clear button.
 #' @param tag button tag, generally \code{a} or \code{button}.
 #' @param ... any other element
 #'

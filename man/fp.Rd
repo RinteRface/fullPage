@@ -20,6 +20,8 @@ fullSlide(..., menu = NULL, center = FALSE)
 Sections and Slides
 }
 \examples{
+if(interactive()){
+
 library(shiny)
 
 ui <- fullPage(
@@ -35,5 +37,6 @@ ui <- fullPage(
 server <- function(input, output){}
 
 shinyApp(ui, server)
+}
 
 }

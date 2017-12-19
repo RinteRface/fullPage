@@ -6,6 +6,9 @@
 \usage{
 fullContainer(...)
 }
+\arguments{
+\item{...}{any element.}
+}
 \description{
 Add a container
 }

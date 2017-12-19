@@ -26,6 +26,8 @@ fullSlidePlot(outputId, ..., menu = NULL, center = FALSE,
 Use plot as background
 }
 \examples{
+if(interactive()){
+
 library(shiny)
 
 ui <- fullPage(
@@ -65,5 +67,6 @@ server <- function(input, output){
 }
 
 shinyApp(ui, server)
+}
 
 }

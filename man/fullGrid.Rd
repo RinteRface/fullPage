@@ -9,6 +9,9 @@ fullRow(...)
 
 fullColumn(...)
 }
+\arguments{
+\item{...}{any element.}
+}
 \description{
 Add grid elements
 }

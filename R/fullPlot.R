@@ -7,6 +7,8 @@
 #' @param background sets background to overlaying shiny inputs.
 #'
 #' @examples
+#' if(interactive()){
+#'
 #' library(shiny)
 #'
 #' ui <- fullPage(
@@ -46,6 +48,7 @@
 #' }
 #'
 #' shinyApp(ui, server)
+#' }
 #'
 #' @rdname fullPlot
 #' @export
@@ -55,7 +58,7 @@ fullSectionPlot <- function(outputId, ..., menu = NULL, center = FALSE, backgrou
     center = center,
     shiny::tags$div(
       class = "wrapper",
-      plotOutput(outputId, height = "100vh"),
+      shiny::plotOutput(outputId, height = "100vh"),
       shiny::tags$div(
         class = "in",
         ...
@@ -86,7 +89,7 @@ fullSlidePlot <- function(outputId, ..., menu = NULL, center = FALSE, background
     center = center,
     shiny::tags$div(
       class = "wrapper",
-      plotOutput(outputId, height = "100vh"),
+      shiny::plotOutput(outputId, height = "100vh"),
       shiny::tags$div(
         class = "in",
         ...

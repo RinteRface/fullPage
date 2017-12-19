@@ -58,6 +58,7 @@
 #' }
 #'
 #' @examples
+#' \dontrun{
 #' library(shiny)
 #'
 #' options <- list(
@@ -69,7 +70,8 @@
 #'   menu = c("Full Page" = "link1",
 #'            "Sections" = "link2",
 #'            "Slides" = "section3",
-#'            "backgrounds" = "section4"),
+#'            "backgrounds" = "section4",
+#'            "Background Slides" = "section5"),
 #'   opts = options,
 #'   fullSection(
 #'     center = TRUE,
@@ -116,6 +118,7 @@
 #'   fullSectionPlot(
 #'     menu = "section4",
 #'     "fp",
+#'     h3("Background plots"),
 #'     fullContainer(
 #'       sliderInput(
 #'         "fpInput",
@@ -124,6 +127,17 @@
 #'         max = 100,
 #'         value = 74
 #'       )
+#'     )
+#'   ),
+#'   fullSection(
+#'     menu = "section5",
+#'     fullSlidePlot(
+#'       "slideSectionPlot1",
+#'       center = TRUE,
+#'       h3("Slide background plot")
+#'     ),
+#'     fullSlidePlot(
+#'       "slideSectionPlot2"
 #'     )
 #'   )
 #' )
@@ -155,9 +169,18 @@
 #'       fullContainer(...)
 #'     )"
 #'   })
+#'
+#'   output$slideSectionPlot1 <- renderPlot({
+#'     hist(rnorm(50, 1, 20))
+#'   })
+#'
+#'   output$slideSectionPlot2 <- renderPlot({
+#'     hist(rnorm(50, 1, 25))
+#'   })
 #' }
 #'
 #' shinyApp(ui, server)
+#' }
 #'
 #' @export
 fullPage <- function(..., opts = NULL, menu = NULL){
@@ -259,6 +282,8 @@ fullPage <- function(..., opts = NULL, menu = NULL){
 #' @param ... any element.
 #'
 #' @examples
+#' if(interactive()){
+#'
 #' library(shiny)
 #'
 #' ui <- fullPage(
@@ -274,6 +299,7 @@ fullPage <- function(..., opts = NULL, menu = NULL){
 #' server <- function(input, output){}
 #'
 #' shinyApp(ui, server)
+#' }
 #'
 #' @rdname fp
 #' @export
