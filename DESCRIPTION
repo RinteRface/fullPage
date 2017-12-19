@@ -7,5 +7,5 @@ Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: shiny
+Imports: shiny, jsonlite
 RoxygenNote: 6.0.1
