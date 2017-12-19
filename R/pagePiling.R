@@ -3,7 +3,7 @@
 #' @examples
 #' if(interactive()){
 #' ui <- pagePiling(
-#'   opts = list('white', '#ee005a', '#2C3E50', '#39C'),
+#'   opts = list(sectionsColor = c('white', '#ee005a', '#2C3E50', '#39C')),
 #'   menu = c("Section 1" = "section1",
 #'            "Section 2" = "section2",
 #'            "Section 3" = "section3"),
