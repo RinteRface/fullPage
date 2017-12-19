@@ -8,15 +8,21 @@
 
 You can install fullPage from github with:
 
-
 ``` r
 # install.packages("devtools")
 devtools::install_github("JohnCoene/fullPage")
 ```
 
+## Info
+
+Includes:
+
+* [fullPage.js](https://github.com/alvarotrigo/fullPage.js/)
+* [Milligram](https://milligram.io/)
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Full Example
 
 ``` r
 library(shiny)
@@ -30,7 +36,8 @@ ui <- fullPage(
   menu = c("Full Page" = "link1",
            "Sections" = "link2",
            "Slides" = "section3",
-           "backgrounds" = "section4"),
+           "backgrounds" = "section4",
+           "Background Slides" = "section5"),
   opts = options,
   fullSection(
     center = TRUE,
@@ -76,7 +83,9 @@ ui <- fullPage(
   ),
   fullSectionPlot(
     menu = "section4",
+    center = TRUE,
     "fp",
+    h3("Background plots"),
     fullContainer(
       sliderInput(
         "fpInput",
@@ -85,6 +94,17 @@ ui <- fullPage(
         max = 100,
         value = 74
       )
+    )
+  ),
+  fullSection(
+    menu = "section5",
+    fullSlidePlot(
+      "slideSectionPlot1",
+      center = TRUE,
+      h1("Slide background plot")
+    ),
+    fullSlidePlot(
+      "slideSectionPlot2"
     )
   )
 )
@@ -108,6 +128,7 @@ server <- function(input, output){
   })
 
   output$fp <- renderPlot({
+    par(bg="gray")
     hist(rnorm(input$fpInput, 1, 10))
   })
 
@@ -115,6 +136,16 @@ server <- function(input, output){
     "fullSlide(
       fullContainer(...)
     )"
+  })
+
+  output$slideSectionPlot1 <- renderPlot({
+    par(bg="gray")
+    hist(rnorm(50, 1, 20))
+  })
+
+  output$slideSectionPlot2 <- renderPlot({
+    par(bg="gray")
+    hist(rnorm(50, 1, 25))
   })
 }
 

@@ -117,6 +117,7 @@
 #'   ),
 #'   fullSectionPlot(
 #'     menu = "section4",
+#'     center = TRUE,
 #'     "fp",
 #'     h3("Background plots"),
 #'     fullContainer(
@@ -134,7 +135,7 @@
 #'     fullSlidePlot(
 #'       "slideSectionPlot1",
 #'       center = TRUE,
-#'       h3("Slide background plot")
+#'       h1("Slide background plot")
 #'     ),
 #'     fullSlidePlot(
 #'       "slideSectionPlot2"
@@ -161,6 +162,7 @@
 #'   })
 #'
 #'   output$fp <- renderPlot({
+#'     par(bg="gray")
 #'     hist(rnorm(input$fpInput, 1, 10))
 #'   })
 #'
@@ -171,10 +173,12 @@
 #'   })
 #'
 #'   output$slideSectionPlot1 <- renderPlot({
+#'     par(bg="gray")
 #'     hist(rnorm(50, 1, 20))
 #'   })
 #'
 #'   output$slideSectionPlot2 <- renderPlot({
+#'     par(bg="gray")
 #'     hist(rnorm(50, 1, 25))
 #'   })
 #' }
