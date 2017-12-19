@@ -3,11 +3,17 @@
 \name{fullRow}
 \alias{fullRow}
 \alias{fullColumn}
+\alias{pageRow}
+\alias{pageColumn}
 \title{Add grid elements}
 \usage{
 fullRow(...)
 
 fullColumn(...)
+
+pageRow(...)
+
+pageColumn(...)
 }
 \arguments{
 \item{...}{any element.}

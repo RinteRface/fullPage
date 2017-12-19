@@ -2,9 +2,12 @@
 % Please edit documentation in R/fullButton.R
 \name{fullButton}
 \alias{fullButton}
+\alias{pageButton}
 \title{Add a button}
 \usage{
 fullButton(..., outline = FALSE, clear = FALSE, tag = shiny::a())
+
+pageButton(..., outline = FALSE, clear = FALSE, tag = shiny::a())
 }
 \arguments{
 \item{...}{any other element}

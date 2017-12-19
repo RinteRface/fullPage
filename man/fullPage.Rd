@@ -90,7 +90,6 @@ ui <- fullPage(
   ),
   fullSection(
     menu = "link2",
-    fullContainer(
       fullRow(
         fullColumn(
           h3("Column 1"),
@@ -107,7 +106,6 @@ ui <- fullPage(
           plotOutput("plot")
         )
       )
-    )
   ),
   fullSection(
     menu = "section3",

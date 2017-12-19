@@ -111,3 +111,7 @@ fullSlidePlot <- function(outputId, ..., menu = NULL, center = FALSE, background
     section
   )
 }
+
+#' @rdname fullPlot
+#' @export
+pageSectionPlot <- fullSectionPlot

@@ -80,7 +80,6 @@
 #'   ),
 #'   fullSection(
 #'     menu = "link2",
-#'     fullContainer(
 #'       fullRow(
 #'         fullColumn(
 #'           h3("Column 1"),
@@ -97,7 +96,6 @@
 #'           plotOutput("plot")
 #'         )
 #'       )
-#'     )
 #'   ),
 #'   fullSection(
 #'     menu = "section3",
@@ -230,7 +228,7 @@ fullPage <- function(..., opts = NULL, menu = NULL){
         ...
       ),
       shiny::tags$script(
-        build_opts(opts)
+        build_opts_fp(opts)
       )
     )
   } else { # no menu
@@ -240,7 +238,7 @@ fullPage <- function(..., opts = NULL, menu = NULL){
         ...
       ),
       shiny::tags$script(
-        build_opts(opts)
+        build_opts_fp(opts)
       )
     )
   }
@@ -339,3 +337,6 @@ fullSlide <- function(..., menu = NULL, center = FALSE){
   div
 }
 
+#' @rdname fp
+#' @export
+pageSection <- fullSection

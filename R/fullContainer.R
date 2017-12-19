@@ -2,6 +2,7 @@
 #'
 #' @param ... any element.
 #'
+#' @rdname container
 #' @export
 fullContainer <- function(...){
   shiny::tags$div(
@@ -9,3 +10,7 @@ fullContainer <- function(...){
     ...
   )
 }
+
+#' @rdname container
+#' @export
+pageContainer <- fullContainer

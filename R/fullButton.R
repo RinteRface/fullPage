@@ -4,6 +4,7 @@
 #' @param tag button tag, generally \code{a} or \code{button}.
 #' @param ... any other element
 #'
+#' @rdname button
 #' @export
 fullButton <- function(..., outline = FALSE, clear = FALSE, tag = shiny::a()){
 
@@ -19,3 +20,7 @@ fullButton <- function(..., outline = FALSE, clear = FALSE, tag = shiny::a()){
     ...
   )
 }
+
+#' @rdname button
+#' @export
+pageButton <- fullButton

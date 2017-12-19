@@ -1,7 +1,13 @@
-build_opts <- function(opts = NULL){
+build_opts_fp <- function(opts = NULL){
   opts <- jsonlite::toJSON(opts, auto_unbox = T)
 
   paste0("$(document).ready(function() {$('#fullpageshiny').fullpage(", opts, ");});")
+}
+
+build_opts_pp <- function(opts = NULL){
+  opts <- jsonlite::toJSON(opts, auto_unbox = T)
+
+  paste0("$(document).ready(function() {$('#fullpagePilling').pagepiling(", opts, ")});")
 }
 
 build_section <- function(menu = NULL, center = FALSE, class, ...){

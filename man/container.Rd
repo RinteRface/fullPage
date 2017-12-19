@@ -2,9 +2,12 @@
 % Please edit documentation in R/fullContainer.R
 \name{fullContainer}
 \alias{fullContainer}
+\alias{pageContainer}
 \title{Add a container}
 \usage{
 fullContainer(...)
+
+pageContainer(...)
 }
 \arguments{
 \item{...}{any element.}

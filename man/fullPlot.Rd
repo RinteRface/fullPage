@@ -3,12 +3,16 @@
 \name{fullSectionPlot}
 \alias{fullSectionPlot}
 \alias{fullSlidePlot}
+\alias{pageSectionPlot}
 \title{Use plot as background}
 \usage{
 fullSectionPlot(outputId, ..., menu = NULL, center = FALSE,
   background = "rgba(255,255,255,0.5)")
 
 fullSlidePlot(outputId, ..., menu = NULL, center = FALSE,
+  background = "rgba(255,255,255,0.5)")
+
+pageSectionPlot(outputId, ..., menu = NULL, center = FALSE,
   background = "rgba(255,255,255,0.5)")
 }
 \arguments{

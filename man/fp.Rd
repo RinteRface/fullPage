@@ -3,11 +3,14 @@
 \name{fullSection}
 \alias{fullSection}
 \alias{fullSlide}
+\alias{pageSection}
 \title{Sections and Slides}
 \usage{
 fullSection(..., menu = NULL, center = FALSE)
 
 fullSlide(..., menu = NULL, center = FALSE)
+
+pageSection(..., menu = NULL, center = FALSE)
 }
 \arguments{
 \item{...}{any element.}

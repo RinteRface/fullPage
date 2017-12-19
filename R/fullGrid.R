@@ -19,3 +19,11 @@ fullColumn <- function(...){
     ...
   )
 }
+
+#' @rdname fullGrid
+#' @export
+pageRow <- fullRow
+
+#' @rdname fullGrid
+#' @export
+pageColumn <- fullColumn

@@ -18,6 +18,7 @@ devtools::install_github("JohnCoene/fullPage")
 Includes:
 
 * [fullPage.js](https://github.com/alvarotrigo/fullPage.js/)
+* [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/)
 * [Milligram](https://milligram.io/)
 
 ## Example
