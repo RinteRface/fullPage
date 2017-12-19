@@ -7,7 +7,7 @@
 #' @param ... any element.
 #'
 #' @details
-#' Valid \code{options}:
+#' Valid \code{opts}:
 #' \itemize{
 #'   \item{\code{lockAnchors}}
 #'   \item{\code{navigation}}
@@ -66,9 +66,10 @@
 #' )
 #'
 #' ui <- fullPage(
-#'   menu = c("section 1" = "link1",
-#'            "section 2" = "link2",
-#'            "section 3" = "section3"),
+#'   menu = c("Full Page" = "link1",
+#'            "Sections" = "link2",
+#'            "Slides" = "section3",
+#'            "backgrounds" = "section4"),
 #'   opts = options,
 #'   fullSection(
 #'     center = TRUE,
@@ -99,30 +100,26 @@
 #'   fullSection(
 #'     menu = "section3",
 #'     fullSlide(
-#'       h3("Without container"),
-#'       plotOutput("slideplot1")
-#'     ),
-#'     fullSlide(
 #'       fullContainer(
+#'         center = TRUE,
 #'         h3("With container"),
 #'         plotOutput("slideplot2"),
 #'         shiny::verbatimTextOutput("containerCode")
 #'       )
+#'     ),
+#'     fullSlide(
+#'       center = TRUE,
+#'       h3("Without container"),
+#'       plotOutput("slideplot1")
 #'     )
 #'   ),
-#'   fullPlot(
+#'   fullSectionPlot(
+#'     menu = "section4",
 #'     "fp",
 #'     fullContainer(
 #'       sliderInput(
 #'         "fpInput",
 #'         label = "Input",
-#'         min = 10,
-#'         max = 100,
-#'         value = 74
-#'       ),
-#'       sliderInput(
-#'         "fpInput2",
-#'         label = "y",
 #'         min = 10,
 #'         max = 100,
 #'         value = 74

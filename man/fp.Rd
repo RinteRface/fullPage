@@ -19,3 +19,21 @@ fullSlide(..., menu = NULL, center = FALSE)
 \description{
 Sections and Slides
 }
+\examples{
+library(shiny)
+
+ui <- fullPage(
+  opts = list(sectionsColor = c('#4BBFC3', '#7BAABE')),
+  fullSection(h3("First"), center = TRUE),
+  fullSection(
+    center = TRUE,
+    fullSlide(h3("Slide 1")),
+    fullSlide(h3("Slide 2"))
+  )
+)
+
+server <- function(input, output){}
+
+shinyApp(ui, server)
+
+}
