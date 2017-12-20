@@ -15,6 +15,8 @@ multiSection(..., menu = NULL, center = FALSE)
 \item{opts}{a list of options, see details.}
 
 \item{menu}{named vector of menu links.}
+
+\item{center}{whether to center text horizontally.}
 }
 \description{
 Setup a multiscroll page

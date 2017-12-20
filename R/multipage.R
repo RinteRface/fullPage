@@ -1,6 +1,7 @@
 #' Setup a multiscroll page
 #'
 #' @inheritParams fullPage
+#' @param center whether to center text horizontally.
 #'
 #' @details use the \code{menu} parameter on one "side" (\code{multiLeft} or \code{multiRight}) only;
 #' No need to specify it twice, it would breaks things as it is a \code{CSS} id, see examples.
