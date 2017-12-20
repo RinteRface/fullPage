@@ -1,12 +1,14 @@
 #' Add a button
 #'
 #' @param outline,clear set outline or clear button.
-#' @param tag button tag, generally \code{a} or \code{button}.
 #' @param ... any other element
+#'
+#' @examples
+#' fullButton("button", href = "https://john-coene.com")
 #'
 #' @rdname button
 #' @export
-fullButton <- function(..., outline = FALSE, clear = FALSE, tag = shiny::a()){
+fullButton <- function(..., outline = FALSE, clear = FALSE){
 
   if(isTRUE(clear) && isTRUE(outline))
     stop("can online set outline or clear, not both", call. = FALSE)
@@ -15,7 +17,7 @@ fullButton <- function(..., outline = FALSE, clear = FALSE, tag = shiny::a()){
   if(isTRUE(outline)) cl <- paste(cl, "button-outline")
   if(isTRUE(clear)) cl <- paste(cl, "button-clear")
 
-  tag(
+  shiny::tags$a(
     class = cl,
     ...
   )

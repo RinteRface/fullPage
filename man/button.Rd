@@ -6,19 +6,21 @@
 \alias{multiButton}
 \title{Add a button}
 \usage{
-fullButton(..., outline = FALSE, clear = FALSE, tag = shiny::a())
+fullButton(..., outline = FALSE, clear = FALSE)
 
-pageButton(..., outline = FALSE, clear = FALSE, tag = shiny::a())
+pageButton(..., outline = FALSE, clear = FALSE)
 
-multiButton(..., outline = FALSE, clear = FALSE, tag = shiny::a())
+multiButton(..., outline = FALSE, clear = FALSE)
 }
 \arguments{
 \item{...}{any other element}
 
 \item{outline, clear}{set outline or clear button.}
-
-\item{tag}{button tag, generally \code{a} or \code{button}.}
 }
 \description{
 Add a button
+}
+\examples{
+fullButton("button", href = "https://john-coene.com")
+
 }
