@@ -9,6 +9,8 @@ pagePiling(..., sections.color, opts = NULL, menu = NULL)
 \arguments{
 \item{...}{any element.}
 
+\item{sections.color}{character vector, i.e.: \code{c("blue", "red")}}
+
 \item{opts}{list of options, see details.}
 
 \item{menu}{menu links as named vector.}
@@ -18,20 +20,17 @@ Set page piling
 }
 \details{
 \itemize{
-  \item{\code{direction}}
-  \item{\code{verticalCentered}}
-  \item{\code{scrollingSpeed}}
-  \item{\code{easing}}
-  \item{\code{loopBottom}}
-  \item{\code{loopTop}}
-  \item{\code{css3}}
-  \item{\code{navigation}}
-  \item{\code{normalScrollElements}}
-  \item{\code{normalScrollElementTouchThreshold}}
-  \item{\code{touchSensitivity}}
-  \item{\code{keyboardScrolling}}
-  \item{\code{sectionSelector}}
-  \item{\code{animateAnchor}}
+  \item{\code{direction} - takes \code{vertical} or \code{horizontal}}
+  \item{\code{verticalCentered} - boolean}
+  \item{\code{scrollingSpeed} - scrolling transitions in milliseconds, numeric value i.e.: \code{700}}
+  \item{\code{easing} - character string, \href{jQuery UI}{http://jqueryui.com/} easing, i.e.: \code{easeInQuart}}
+  \item{\code{loopBottom} - boolean}
+  \item{\code{loopTop} - boolean}
+  \item{\code{css3} - boolean}
+  \item{\code{navigation} - boolean, show navigation bar}
+  \item{\code{touchSensitivity} - numeric value}
+  \item{\code{keyboardScrolling} - boolean}
+  \item{\code{animateAnchor} - boolean, whether to use anchors}
 }
 }
 \examples{

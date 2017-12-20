@@ -27,7 +27,7 @@ Valid \code{opts}:
 \itemize{
   \item{\code{verticalCentered} - boolean}
   \item{\code{scrollingSpeed} - numeric}
-  \item{\code{easing} - character string, \href{jQuery UI}{http://jqueryui.com/} easing, i.e. 'easeInQuart'}
+  \item{\code{easing} - character string, \href{jQuery UI}{http://jqueryui.com/} easing, i.e.: \code{easeInQuart}}
   \item{\code{sectionsColor} - character vector, i.e.: \code{c("blue", "red")}}
   \item{\code{navigation} - boolean}
   \item{\code{navigationPosition} - character string, takes \code{none}, \code{left}, or \code{right}}
