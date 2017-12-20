@@ -160,7 +160,7 @@
 #'   })
 #'
 #'   output$fp <- renderPlot({
-#'     par(bg="gray")
+#'     par(bg = "lightgray")
 #'     hist(rnorm(input$fpInput, 1, 10))
 #'   })
 #'
@@ -171,12 +171,12 @@
 #'   })
 #'
 #'   output$slideSectionPlot1 <- renderPlot({
-#'     par(bg="gray")
+#'     par(bg = "lightblue")
 #'     hist(rnorm(50, 1, 20))
 #'   })
 #'
 #'   output$slideSectionPlot2 <- renderPlot({
-#'     par(bg="gray")
+#'     par(bg = "gray50")
 #'     hist(rnorm(50, 1, 25))
 #'   })
 #' }

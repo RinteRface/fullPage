@@ -24,7 +24,7 @@ pageSectionPlot(outputId, ..., menu = NULL, center = FALSE,
 
 \item{center}{whether to center text horizontally.}
 
-\item{background}{sets background to overlaying shiny inputs.}
+\item{background}{sets background to overlaying shiny inputs, set to \code{NULL} to remove.}
 }
 \description{
 Use plot as background

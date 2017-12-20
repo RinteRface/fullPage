@@ -4,7 +4,7 @@
 #' @param ... any children element.
 #' @param menu menu link.
 #' @param center whether to center text horizontally.
-#' @param background sets background to overlaying shiny inputs.
+#' @param background sets background to overlaying shiny inputs, set to \code{NULL} to remove.
 #'
 #' @examples
 #' if(interactive()){

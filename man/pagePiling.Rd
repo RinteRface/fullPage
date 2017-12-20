@@ -4,22 +4,99 @@
 \alias{pagePiling}
 \title{Set page piling}
 \usage{
-pagePiling(..., opts = NULL, menu = NULL)
+pagePiling(..., sections.color, opts = NULL, menu = NULL)
+}
+\arguments{
+\item{...}{any element.}
+
+\item{opts}{list of options, see details.}
+
+\item{menu}{menu links as named vector.}
 }
 \description{
 Set page piling
 }
+\details{
+\itemize{
+  \item{\code{direction}}
+  \item{\code{verticalCentered}}
+  \item{\code{scrollingSpeed}}
+  \item{\code{easing}}
+  \item{\code{loopBottom}}
+  \item{\code{loopTop}}
+  \item{\code{css3}}
+  \item{\code{navigation}}
+  \item{\code{normalScrollElements}}
+  \item{\code{normalScrollElementTouchThreshold}}
+  \item{\code{touchSensitivity}}
+  \item{\code{keyboardScrolling}}
+  \item{\code{sectionSelector}}
+  \item{\code{animateAnchor}}
+}
+}
 \examples{
 if(interactive()){
+library(shiny)
+
+options <- list(
+  loopBottom = TRUE
+)
+
 ui <- pagePiling(
+  sections.color = c('#f2f2f2', '#2C3E50', '#39C'),
+  opts = options,
+  menu = c("Section 1" = "section1",
+           "Piling" = "section2",
+           "Plots" = "section3",
+           "Layers" = "section4"),
   pageSection(
+    center = TRUE,
+    menu = "section1",
     h1("Page piling")
   ),
   pageSection(
-    h1("Section2")
+    menu = "section2",
+    center = TRUE,
+    h1("Section 2")
+  ),
+  pageSectionPlot(
+    "plot",
+    center = TRUE,
+    menu = "section3",
+    h1("Plot background")
+  ),
+  pageSectionPlot(
+    "plot2",
+    center = TRUE,
+    menu = "section4",
+    pageContainer(
+      h1("Layer anything"),
+      sliderInput(
+        "bins",
+        "Data Points",
+        min = 100,
+        max = 500,
+        step = 25,
+        value = 200
+      )
+    )
   )
 )
 
+server <- function(input, output){
+
+  output$plot <- renderPlot({
+    par(bg = "grey60")
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$plot2 <- renderPlot({
+    par(bg = "grey80")
+    hist(rnorm(input$bins, 100, 250))
+  })
+}
+
+shinyApp(ui, server)
 }
 
 }

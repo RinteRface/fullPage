@@ -1,33 +1,102 @@
 #' Set page piling
 #'
+#' @param ... any element.
+#' @param opts list of options, see details.
+#' @param menu menu links as named vector.
+#'
+#' @details
+#' \itemize{
+#'   \item{\code{direction}}
+#'   \item{\code{verticalCentered}}
+#'   \item{\code{scrollingSpeed}}
+#'   \item{\code{easing}}
+#'   \item{\code{loopBottom}}
+#'   \item{\code{loopTop}}
+#'   \item{\code{css3}}
+#'   \item{\code{navigation}}
+#'   \item{\code{normalScrollElements}}
+#'   \item{\code{normalScrollElementTouchThreshold}}
+#'   \item{\code{touchSensitivity}}
+#'   \item{\code{keyboardScrolling}}
+#'   \item{\code{sectionSelector}}
+#'   \item{\code{animateAnchor}}
+#' }
+#'
 #' @examples
 #' if(interactive()){
+#' library(shiny)
+#'
+#' options <- list(
+#'   loopBottom = TRUE
+#' )
+#'
 #' ui <- pagePiling(
-#'   opts = list(sectionsColor = c('white', '#ee005a', '#2C3E50', '#39C')),
+#'   sections.color = c('#f2f2f2', '#2C3E50', '#39C'),
+#'   opts = options,
 #'   menu = c("Section 1" = "section1",
-#'            "Section 2" = "section2",
-#'            "Section 3" = "section3"),
+#'            "Piling" = "section2",
+#'            "Plots" = "section3",
+#'            "Layers" = "section4"),
 #'   pageSection(
+#'     center = TRUE,
 #'     menu = "section1",
 #'     h1("Page piling")
 #'   ),
 #'   pageSection(
 #'     menu = "section2",
+#'     center = TRUE,
 #'     h1("Section 2")
 #'   ),
-#'   pageSection(
+#'   pageSectionPlot(
+#'     "plot",
+#'     center = TRUE,
 #'     menu = "section3",
-#'     h1("Section 3")
+#'     h1("Plot background")
+#'   ),
+#'   pageSectionPlot(
+#'     "plot2",
+#'     center = TRUE,
+#'     menu = "section4",
+#'     pageContainer(
+#'       h1("Layer anything"),
+#'       sliderInput(
+#'         "bins",
+#'         "Data Points",
+#'         min = 100,
+#'         max = 500,
+#'         step = 25,
+#'         value = 200
+#'       )
+#'     )
 #'   )
 #' )
 #'
-#' server <- function(input, output){}
+#' server <- function(input, output){
+#'
+#'   output$plot <- renderPlot({
+#'     par(bg = "grey60")
+#'     plot(mtcars$wt, mtcars$mpg)
+#'   })
+#'
+#'   output$plot2 <- renderPlot({
+#'     par(bg = "grey80")
+#'     hist(rnorm(input$bins, 100, 250))
+#'   })
+#' }
 #'
 #' shinyApp(ui, server)
 #' }
 #'
 #' @export
-pagePiling <- function(..., opts = NULL, menu = NULL){
+pagePiling <- function(..., sections.color, opts = NULL, menu = NULL){
+
+  if(missing(sections.color))
+    stop("must pass sections.color", call. = FALSE)
+
+  # add anchors to JS
+  if(!inherits(opts, "list")) opts <- list()
+
+  opts <- append(opts, list(sectionsColor = sections.color))
 
   # build menu
   if(!is.null(menu)){
@@ -54,9 +123,6 @@ pagePiling <- function(..., opts = NULL, menu = NULL){
       # append to unordered list
       ul <- shiny::tagAppendChild(ul, li)
     }
-
-    # add anchors to JS
-    if(!inherits(opts, "list")) opts <- list()
 
     # add menu anchors
     opts$anchors <- unname(menu)
