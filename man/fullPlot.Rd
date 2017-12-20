@@ -4,6 +4,7 @@
 \alias{fullSectionPlot}
 \alias{fullSlidePlot}
 \alias{pageSectionPlot}
+\alias{multiSectionPlot}
 \title{Use plot as background}
 \usage{
 fullSectionPlot(outputId, ..., menu = NULL, center = FALSE,
@@ -13,6 +14,9 @@ fullSlidePlot(outputId, ..., menu = NULL, center = FALSE,
   background = "rgba(255,255,255,0.5)")
 
 pageSectionPlot(outputId, ..., menu = NULL, center = FALSE,
+  background = "rgba(255,255,255,0.5)")
+
+multiSectionPlot(outputId, ..., menu = NULL, center = FALSE,
   background = "rgba(255,255,255,0.5)")
 }
 \arguments{

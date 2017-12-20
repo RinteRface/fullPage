@@ -2,7 +2,7 @@
 
 # fullPage
 
-[fullPage.js](https://github.com/alvarotrigo/fullPage.js) for Shiny.
+Many works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
 ## Installation
 

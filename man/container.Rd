@@ -3,11 +3,14 @@
 \name{fullContainer}
 \alias{fullContainer}
 \alias{pageContainer}
+\alias{multiContainer}
 \title{Add a container}
 \usage{
 fullContainer(...)
 
 pageContainer(...)
+
+multiContainer(...)
 }
 \arguments{
 \item{...}{any element.}

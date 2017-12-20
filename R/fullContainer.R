@@ -14,3 +14,7 @@ fullContainer <- function(...){
 #' @rdname container
 #' @export
 pageContainer <- fullContainer
+
+#' @rdname container
+#' @export
+multiContainer <- fullContainer

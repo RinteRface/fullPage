@@ -115,3 +115,34 @@ fullSlidePlot <- function(outputId, ..., menu = NULL, center = FALSE, background
 #' @rdname fullPlot
 #' @export
 pageSectionPlot <- fullSectionPlot
+
+#' @rdname fullPlot
+#' @export
+multiSectionPlot <- function(outputId, ..., menu = NULL, center = FALSE, background = "rgba(255,255,255,0.5)"){
+  section <- multiSection(
+    menu = menu,
+    center = center,
+    shiny::tags$div(
+      class = "wrapper",
+      shiny::plotOutput(outputId, height = "100vh"),
+      shiny::tags$div(
+        class = "in",
+        ...
+      )
+    )
+  )
+
+  if(!is.null(background))
+    css <- paste0(".in .shiny-input-container{background:", background,";}")
+
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::tags$style(
+          css
+        )
+      )
+    ),
+    section
+  )
+}

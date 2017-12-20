@@ -6,20 +6,31 @@
 #' if(interactive()){
 #' library(shiny)
 #'
+#' options <- list(
+#'   sectionsColor = c("#4BBFC3", "#7BAABE", "lightgray")
+#' )
+#'
 #' ui <- multiPage(
+#'   opts = options,
 #'   multiLeft(
 #'     multiSection(
 #'       center = TRUE,
 #'       h1("Multiple")
 #'     ),
 #'     multiSection(
-#'       numericInput(
-#'         "max",
-#'         "Maximum",
-#'         min = 50,
-#'         max = 250,
-#'         value = 10
+#'       multiContainer(
+#'         h1("Plot ->"),
+#'         numericInput(
+#'           "max",
+#'           "Maximum",
+#'           min = 50,
+#'           max = 250,
+#'           value = 10
+#'         )
 #'       )
+#'     ),
+#'     multiSectionPlot(
+#'       "fullPlot"
 #'     )
 #'   ),
 #'   multiRight(
@@ -30,13 +41,32 @@
 #'     multiSection(
 #'       center = TRUE,
 #'       plotOutput("plot")
+#'     ),
+#'     multiSection(
+#'       multiContainer(
+#'         center = TRUE,
+#'         h1("<- Full Section plot"),
+#'         sliderInput(
+#'           "number",
+#'           "Data points",
+#'           min = 50,
+#'           max = 250,
+#'           value = 10
+#'         )
+#'       )
 #'     )
 #'   )
 #' )
 #'
 #' server <- function(input, output){
+#'
 #'   output$plot <- renderPlot({
 #'     hist(rnorm(100, 20, input$max))
+#'   })
+#'
+#'   output$fullPlot <- renderPlot({
+#'     par(bg = "gray")
+#'     hist(rnorm(input$number, 20, 250))
 #'   })
 #' }
 #'
