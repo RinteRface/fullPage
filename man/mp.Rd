@@ -22,6 +22,29 @@ Setup a multiscroll page
 \details{
 use the \code{menu} parameter on one "side" (\code{multiLeft} or \code{multiRight}) only;
 No need to specify it twice, it would breaks things as it is a \code{CSS} id, see examples.
+
+Valid \code{opts}:
+\itemize{
+  \item{\code{verticalCentered }}
+  \item{\code{scrollingSpeed}}
+  \item{\code{easing}}
+  \item{\code{sectionsColor}}
+  \item{\code{navigation}}
+  \item{\code{navigationPosition}}
+  \item{\code{navigationColor}}
+  \item{\code{navigationTooltips}}
+  \item{\code{loopBottom}}
+  \item{\code{loopTop}}
+  \item{\code{css3}}
+  \item{\code{paddingTop}}
+  \item{\code{paddingBottom}}
+  \item{\code{normalScrollElements}}
+  \item{\code{keyboardScrolling}}
+  \item{\code{touchSensitivity}}
+  \item{\code{responsiveWidth}}
+  \item{\code{responsiveHeight}}
+  \item{\code{responsiveExpand}}
+}
 }
 \examples{
 if(interactive()){

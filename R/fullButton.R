@@ -24,3 +24,7 @@ fullButton <- function(..., outline = FALSE, clear = FALSE, tag = shiny::a()){
 #' @rdname button
 #' @export
 pageButton <- fullButton
+
+#' @rdname button
+#' @export
+multiButton <- fullButton
