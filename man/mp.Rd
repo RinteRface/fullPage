@@ -25,25 +25,24 @@ No need to specify it twice, it would breaks things as it is a \code{CSS} id, se
 
 Valid \code{opts}:
 \itemize{
-  \item{\code{verticalCentered }}
-  \item{\code{scrollingSpeed}}
-  \item{\code{easing}}
-  \item{\code{sectionsColor}}
-  \item{\code{navigation}}
-  \item{\code{navigationPosition}}
-  \item{\code{navigationColor}}
-  \item{\code{navigationTooltips}}
-  \item{\code{loopBottom}}
-  \item{\code{loopTop}}
-  \item{\code{css3}}
-  \item{\code{paddingTop}}
-  \item{\code{paddingBottom}}
-  \item{\code{normalScrollElements}}
-  \item{\code{keyboardScrolling}}
-  \item{\code{touchSensitivity}}
-  \item{\code{responsiveWidth}}
-  \item{\code{responsiveHeight}}
-  \item{\code{responsiveExpand}}
+  \item{\code{verticalCentered} - boolean}
+  \item{\code{scrollingSpeed} - numeric}
+  \item{\code{easing} - character string, \href{jQuery UI}{http://jqueryui.com/} easing, i.e. 'easeInQuart'}
+  \item{\code{sectionsColor} - character vector, i.e.: \code{c("blue", "red")}}
+  \item{\code{navigation} - boolean}
+  \item{\code{navigationPosition} - character string, takes \code{none}, \code{left}, or \code{right}}
+  \item{\code{navigationColor} - character string, i.e.:"black"}
+  \item{\code{navigationTooltips} - character vector, i.e.: \code{c("Tooltip 1", "Tooltip 2")}}
+  \item{\code{loopBottom} - boolean}
+  \item{\code{loopTop} - boolean}
+  \item{\code{css3} - boolnean}
+  \item{\code{paddingTop} - numeric, i.e.: 0}
+  \item{\code{paddingBottom} - numeric, i.e.: 0}
+  \item{\code{keyboardScrolling} boolean}
+  \item{\code{touchSensitivity} - numeric, i.e.: 5}
+  \item{\code{responsiveWidth} - numeric, i.e.: 0}
+  \item{\code{responsiveHeight} - numeric, i.e.: 0}
+  \item{\code{responsiveExpand} - boolean}
 }
 }
 \examples{
