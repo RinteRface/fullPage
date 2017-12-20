@@ -27,3 +27,11 @@ pageRow <- fullRow
 #' @rdname fullGrid
 #' @export
 pageColumn <- fullColumn
+
+#' @rdname fullGrid
+#' @export
+multiRow <- fullRow
+
+#' @rdname fullGrid
+#' @export
+multiColumn <- fullColumn

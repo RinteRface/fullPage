@@ -5,6 +5,8 @@
 \alias{fullColumn}
 \alias{pageRow}
 \alias{pageColumn}
+\alias{multiRow}
+\alias{multiColumn}
 \title{Add grid elements}
 \usage{
 fullRow(...)
@@ -14,6 +16,10 @@ fullColumn(...)
 pageRow(...)
 
 pageColumn(...)
+
+multiRow(...)
+
+multiColumn(...)
 }
 \arguments{
 \item{...}{any element.}
