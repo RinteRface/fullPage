@@ -17,13 +17,17 @@ devtools::install_github("JohnCoene/fullPage")
 
 Includes:
 
-* [fullPage.js](https://github.com/alvarotrigo/fullPage.js/)
-* [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/)
+* [fullPage.js](https://github.com/alvarotrigo/fullPage.js/) -- functions starting with `full`.
+* [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/) -- functions starting with `page`.
+* [multiScroll.js](https://github.com/alvarotrigo/multiscroll.js) -- functions starting with `multi`.
+
+All ship with:
+
 * [Milligram](https://milligram.io/)
 
 ## Example
 
-Full Example
+Full page Example.
 
 ``` r
 library(shiny)

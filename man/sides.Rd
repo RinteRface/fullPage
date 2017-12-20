@@ -9,6 +9,9 @@ multiLeft(...)
 
 multiRight(...)
 }
+\arguments{
+\item{...}{any element.}
+}
 \description{
 Create multi sections
 }

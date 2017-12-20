@@ -1,5 +1,7 @@
 #' Create multi sections
 #'
+#' @param ... any element.
+#'
 #' @rdname sides
 #' @export
 multiLeft <- function(...){

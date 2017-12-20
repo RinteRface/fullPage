@@ -2,6 +2,9 @@
 #'
 #' @inheritParams fullPage
 #'
+#' @details use the \code{menu} parameter on one "side" (\code{multiLeft} or \code{multiRight}) only;
+#' No need to specify it twice, it would breaks things as it is a \code{CSS} id, see examples.
+#'
 #' @examples
 #' if(interactive()){
 #' library(shiny)
@@ -12,12 +15,17 @@
 #'
 #' ui <- multiPage(
 #'   opts = options,
+#'   menu = c("Multi Scroll" = "multiscroll",
+#'            "Plots" = "plots",
+#'            "Full Section plots" = "fullplots"),
 #'   multiLeft(
 #'     multiSection(
 #'       center = TRUE,
+#'       menu = "multiscroll",
 #'       h1("Multiple")
 #'     ),
 #'     multiSection(
+#'       menu = "plots",
 #'       multiContainer(
 #'         h1("Plot ->"),
 #'         numericInput(
@@ -30,6 +38,7 @@
 #'       )
 #'     ),
 #'     multiSectionPlot(
+#'       menu = "fullplots",
 #'       "fullPlot"
 #'     )
 #'   ),
