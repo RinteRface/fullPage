@@ -13,5 +13,8 @@ multiRight(...)
 \item{...}{any element.}
 }
 \description{
-Create multi sections
+Create multi page side.
+}
+\details{
+Only use one of each in \code{\link{multiPage}}.
 }
