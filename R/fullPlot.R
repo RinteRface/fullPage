@@ -1,5 +1,7 @@
 #' Use plot as background
 #'
+#' Use a reactive plot as section or slide background.
+#'
 #' @param outputId id passed to \code{\link[shiny]{plotOutput}}.
 #' @param ... any children element.
 #' @param menu menu link.

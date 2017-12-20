@@ -31,7 +31,7 @@ multiSectionPlot(outputId, ..., menu = NULL, center = FALSE,
 \item{background}{sets background to overlaying shiny inputs, set to \code{NULL} to remove.}
 }
 \description{
-Use plot as background
+Use a reactive plot as section or slide background.
 }
 \examples{
 if(interactive()){
