@@ -1,5 +1,7 @@
 #' Set page piling
 #'
+#' Create a pilling page.
+#'
 #' @param ... any element.
 #' @param opts list of options, see details.
 #' @param sections.color character vector, i.e.: \code{c("blue", "red")}

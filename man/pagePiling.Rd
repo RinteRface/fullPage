@@ -16,7 +16,7 @@ pagePiling(..., sections.color, opts = NULL, menu = NULL)
 \item{menu}{menu links as named vector.}
 }
 \description{
-Set page piling
+Create a pilling page.
 }
 \details{
 \itemize{
