@@ -20,7 +20,9 @@ Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny
 devtools::install_github("JohnCoene/fullPage")
 ```
 
-### [Demos](http://john-coene.com/packages/fullPage/)
+## Demos
+
+See fullPage [in action](http://john-coene.com/packages/fullPage/)
 
 ## Features
 
