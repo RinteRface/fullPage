@@ -6,6 +6,13 @@
 
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
+* [Install](#install)
+* [Info](#info)
+* [Examples](#examples)
+    * [fullPage](#fullPage)
+    * [pagePiling](#pagePiling)
+    * [multiScroll](#multiScroll)
+
 ## Installation
 ``` r
 # install.packages("devtools")
@@ -24,7 +31,11 @@ All ship with:
 
 * [Milligram](https://milligram.io/)
 
-## Example
+### [Demos](http://john-coene.com/packages/fullPage/)
+
+## Examples
+
+#### fullPage
 
 fullpage.js Example, functions start with `full`.
 
@@ -156,6 +167,8 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+#### pagePiling
+
 pagePiling.js example, functions start with `page`.
 
 ```r
@@ -221,6 +234,8 @@ server <- function(input, output){
 
 shinyApp(ui, server)
 ```
+
+#### multiScroll
 
 multiscroll.js example, functions start with `multi`.
 
