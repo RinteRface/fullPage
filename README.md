@@ -7,7 +7,8 @@
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
 * [Install](#install)
-* [Info](#info)
+* [Demos](#demos)
+* [Features](#features)
 * [Examples](#examples)
     * [fullPage](#fullPage)
     * [pagePiling](#pagePiling)
@@ -19,9 +20,9 @@ Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny
 devtools::install_github("JohnCoene/fullPage")
 ```
 
-## Info
+### [Demos](http://john-coene.com/packages/fullPage/)
 
-Includes:
+## Features
 
 * [fullPage.js](https://github.com/alvarotrigo/fullPage.js/) -- functions starting with `full`.
 * [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/) -- functions starting with `page`.
@@ -29,9 +30,7 @@ Includes:
 
 All ship with:
 
-* [Milligram](https://milligram.io/)
-
-### [Demos](http://john-coene.com/packages/fullPage/)
+* [Milligram](https://milligram.io/) *grid, button, typography*
 
 ## Examples
 
