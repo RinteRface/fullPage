@@ -36,7 +36,7 @@ All ship with:
 
 ## Examples
 
-#### fullPage
+### fullPage
 
 fullpage.js Example, functions start with `full`.
 
@@ -168,7 +168,7 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-#### pagePiling
+### pagePiling
 
 pagePiling.js example, functions start with `page`.
 
@@ -236,7 +236,7 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-#### multiScroll
+### multiScroll
 
 multiscroll.js example, functions start with `multi`.
 
