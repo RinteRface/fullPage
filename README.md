@@ -10,7 +10,7 @@ Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny
 * [Demos](#demos)
 * [Features](#features)
 * [Examples](#examples)
-    * [fullPage](#fullPage)
+    * [fullPage](#fullPage-1)
     * [pagePiling](#pagePiling)
     * [multiScroll](#multiScroll)
 
