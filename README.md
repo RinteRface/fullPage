@@ -2,12 +2,11 @@
 
 # fullPage
 
+![FullPage](http://john-coene.com/img/fullPage.gif)
+
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
 ## Installation
-
-You can install fullPage from github with:
-
 ``` r
 # install.packages("devtools")
 devtools::install_github("JohnCoene/fullPage")
