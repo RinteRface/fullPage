@@ -4,6 +4,7 @@
 #'
 #' @param opts a list of options, see details.
 #' @param menu named vector of menu links.
+#' @param center horizontally center all sections.
 #' @param ... any element.
 #'
 #' @details
@@ -185,7 +186,7 @@
 #' }
 #'
 #' @export
-fullPage <- function(..., opts = NULL, menu = NULL){
+fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 
   # build menu
   if(!is.null(menu)){
@@ -242,6 +243,9 @@ fullPage <- function(..., opts = NULL, menu = NULL){
       )
     )
   }
+
+  if(isTRUE(center))
+    body <- shiny::tagAppendAttributes(body, style = "text-align: center;")
 
   shiny::tags$html(
     shiny::tags$head(

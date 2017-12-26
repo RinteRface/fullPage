@@ -4,7 +4,7 @@
 \alias{pagePiling}
 \title{Set page piling}
 \usage{
-pagePiling(..., sections.color, opts = NULL, menu = NULL)
+pagePiling(..., sections.color, opts = NULL, menu = NULL, center = FALSE)
 }
 \arguments{
 \item{...}{any element.}
@@ -14,6 +14,8 @@ pagePiling(..., sections.color, opts = NULL, menu = NULL)
 \item{opts}{list of options, see details.}
 
 \item{menu}{menu links as named vector.}
+
+\item{center}{horizontally center all sections.}
 }
 \description{
 Create a pilling page.

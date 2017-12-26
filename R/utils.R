@@ -32,3 +32,7 @@ build_section <- function(menu = NULL, center = FALSE, class, ...){
 
   div
 }
+
+rand <- function(){
+  paste0(tolower(sample(c(LETTERS, 1:9), 26 + 9)), collapse = "")
+}

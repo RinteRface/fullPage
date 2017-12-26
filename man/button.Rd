@@ -2,25 +2,109 @@
 % Please edit documentation in R/fullButton.R
 \name{fullButton}
 \alias{fullButton}
+\alias{fullButtonTo}
+\alias{fullButtonUp}
+\alias{fullButtonDown}
+\alias{fullButtonRight}
+\alias{fullButtonLeft}
+\alias{fullButtonCustom}
 \alias{pageButton}
 \alias{multiButton}
+\alias{pageButtonUp}
+\alias{pageButtonDown}
+\alias{pageButtonTo}
+\alias{multiButtonUp}
+\alias{multiButtonDown}
+\alias{multiButtonTo}
 \title{Add a button}
 \usage{
 fullButton(..., outline = FALSE, clear = FALSE)
 
+fullButtonTo(..., section, slide = 0, outline = FALSE, clear = FALSE)
+
+fullButtonUp(..., outline = FALSE, clear = FALSE)
+
+fullButtonDown(..., outline = FALSE, clear = FALSE)
+
+fullButtonRight(..., outline = FALSE, clear = FALSE)
+
+fullButtonLeft(..., outline = FALSE, clear = FALSE)
+
+fullButtonCustom(..., fun, outline = FALSE, clear = FALSE)
+
 pageButton(..., outline = FALSE, clear = FALSE)
 
 multiButton(..., outline = FALSE, clear = FALSE)
+
+pageButtonUp(..., outline = FALSE, clear = FALSE)
+
+pageButtonDown(..., outline = FALSE, clear = FALSE)
+
+pageButtonTo(..., section, outline = FALSE, clear = FALSE)
+
+multiButtonUp(..., outline = FALSE, clear = FALSE)
+
+multiButtonDown(..., outline = FALSE, clear = FALSE)
+
+multiButtonTo(..., section, outline = FALSE, clear = FALSE)
 }
 \arguments{
 \item{...}{any other element}
 
 \item{outline, clear}{set outline or clear button.}
+
+\item{section, slide}{target section and/or slide.}
+
+\item{fun}{Javascript function to pass to button.}
 }
 \description{
 Add a button
 }
 \examples{
-fullButton("button", href = "https://john-coene.com")
+library(shiny)
+
+if(interactive()){
+
+  ui <- fullPage(
+
+    center = TRUE,
+
+    fullSection(
+      center = TRUE,
+      h1("Buttons")
+    ),
+    fullSection(
+      fullButton("Visit site", href = "https://john-coene.com")
+    ),
+    fullSection(
+      fullButtonDown("Move Down", outline = TRUE)
+    ),
+    fullSection(
+      fullButtonUp("Move up")
+    ),
+    fullSection(
+      fullButtonTo("Move to first section", section = 1)
+    ),
+    fullSection(
+      center = TRUE,
+      fullSlide(
+        fullButtonRight("Slide right", clear = TRUE)
+      ),
+      fullSlide(
+        fullButtonLeft("Slide left", clear = TRUE)
+      )
+    ),
+    fullSection(
+      p("Disables keyword scrolling"),
+      fullButtonCustom("Custom button",
+        fun = "$.fn.fullpage.setKeyboardScrolling(false, 'down, right');")
+    )
+  )
+
+  server <- function(input, output){}
+
+  shinyApp(ui, server)
+
+}
 
 }

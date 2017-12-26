@@ -4,7 +4,7 @@
 \alias{fullPage}
 \title{Setup fullPage}
 \usage{
-fullPage(..., opts = NULL, menu = NULL)
+fullPage(..., opts = NULL, menu = NULL, center = FALSE)
 }
 \arguments{
 \item{...}{any element.}
@@ -12,6 +12,8 @@ fullPage(..., opts = NULL, menu = NULL)
 \item{opts}{a list of options, see details.}
 
 \item{menu}{named vector of menu links.}
+
+\item{center}{horizontally center all sections.}
 }
 \description{
 Create a fullpage.

@@ -6,6 +6,7 @@
 #' @param opts list of options, see details.
 #' @param sections.color character vector, i.e.: \code{c("blue", "red")}
 #' @param menu menu links as named vector.
+#' @param center horizontally center all sections.
 #'
 #' @details
 #' \itemize{
@@ -88,7 +89,7 @@
 #' }
 #'
 #' @export
-pagePiling <- function(..., sections.color, opts = NULL, menu = NULL){
+pagePiling <- function(..., sections.color, opts = NULL, menu = NULL, center = FALSE){
 
   if(missing(sections.color))
     stop("must pass sections.color", call. = FALSE)
@@ -144,6 +145,9 @@ pagePiling <- function(..., sections.color, opts = NULL, menu = NULL){
       )
     )
   }
+
+  if(isTRUE(center))
+    body <- shiny::tagAppendAttributes(body, style = "text-align: center;")
 
   shiny::tags$html(
     shiny::tags$head(
