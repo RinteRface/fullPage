@@ -7,7 +7,7 @@
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
 * [Install](#install)
-* [Demos](#demos)
+* [Demos](http://john-coene.com/packages/fullPage/)
 * [Features](#features)
 * [Examples](#examples)
     * [fullPage](#fullPage-1)
@@ -19,10 +19,6 @@ Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny
 # install.packages("devtools")
 devtools::install_github("JohnCoene/fullPage")
 ```
-
-## Demos
-
-See fullPage [in action](http://john-coene.com/packages/fullPage/)
 
 ## Features
 
