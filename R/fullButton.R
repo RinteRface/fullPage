@@ -86,11 +86,9 @@ fullButtonTo <- function(..., section, slide = 0, outline = FALSE, clear = FALSE
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.fullpage.moveTo(", section, ", ", slide, ");});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -108,11 +106,9 @@ fullButtonUp <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.fullpage.moveSectionUp();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -130,11 +126,9 @@ fullButtonDown <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.fullpage.moveSectionDown();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -152,11 +146,9 @@ fullButtonRight <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.fullpage.moveSlideRight();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -174,11 +166,9 @@ fullButtonLeft <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.fullpage.moveSlideLeft();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -199,11 +189,9 @@ fullButtonCustom <- function(..., fun, outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){", fun, "});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -229,11 +217,9 @@ pageButtonUp <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.pagepiling.moveSectionUp();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -251,11 +237,9 @@ pageButtonDown <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.pagepiling.moveSectionDown();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -279,11 +263,9 @@ pageButtonTo <- function(..., section, outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.pagepiling.moveTo(", section, ");});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -301,11 +283,9 @@ multiButtonUp <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.multiscroll.moveSectionDown();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -323,11 +303,9 @@ multiButtonDown <- function(..., outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.multiscroll.moveSectionDown();});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button
@@ -351,11 +329,9 @@ multiButtonTo <- function(..., section, outline = FALSE, clear = FALSE){
   JS <- paste0("$(document).on('click', '#", id, "', function(){$.fn.multiscroll.moveTo(", section, ");});")
 
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          JS
-        )
+    shiny::tags$head(
+      shiny::tags$script(
+        JS
       )
     ),
     button

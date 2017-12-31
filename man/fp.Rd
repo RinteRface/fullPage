@@ -28,12 +28,21 @@ if(interactive()){
 library(shiny)
 
 ui <- fullPage(
-  opts = list(sectionsColor = c('#4BBFC3', '#7BAABE')),
+  opts = list(
+    sectionsColor = c('#4BBFC3', '#7BAABE'),
+    parallax = TRUE
+  ),
   fullSection(h3("First"), center = TRUE),
   fullSection(
     center = TRUE,
     fullSlide(h3("Slide 1")),
     fullSlide(h3("Slide 2"))
+  ),
+  fullSection(
+    fullParallax(
+      h1("parallax"),
+      url = "https://photos.vanityfair.com/2015/01/30/54cbf3da998d4de83ba3602f_image.jpg"
+    )
   )
 )
 
