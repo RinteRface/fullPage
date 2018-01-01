@@ -10,17 +10,17 @@
 #'
 #' @details
 #' \itemize{
-#'   \item{\code{direction} - takes \code{vertical} or \code{horizontal}}
-#'   \item{\code{verticalCentered} - boolean}
-#'   \item{\code{scrollingSpeed} - scrolling transitions in milliseconds, numeric value i.e.: \code{700}}
-#'   \item{\code{easing} - character string, \href{jQuery UI}{http://jqueryui.com/} easing, i.e.: \code{easeInQuart}}
-#'   \item{\code{loopBottom} - boolean}
-#'   \item{\code{loopTop} - boolean}
-#'   \item{\code{css3} - boolean}
-#'   \item{\code{navigation} - boolean, show navigation bar}
-#'   \item{\code{touchSensitivity} - numeric value}
-#'   \item{\code{keyboardScrolling} - boolean}
-#'   \item{\code{animateAnchor} - boolean, whether to use anchors}
+#'   \item{\code{direction} - takes \code{vertical} or \code{horizontal} - defines if the scroll is vertical or horizontal.}
+#'   \item{\code{verticalCentered} - boolean.}
+#'   \item{\code{scrollingSpeed} - scrolling transitions in milliseconds, numeric value i.e.: \code{700}.}
+#'   \item{\code{easing} - character string - takes \code{swing} or \code{linear}.}
+#'   \item{\code{loopBottom} - boolean - defines whether scrolling down in the last section should scroll to the first one or not.}
+#'   \item{\code{loopTop} - boolean - defines whether scrolling up in the first section should scroll to the last one or not.}
+#'   \item{\code{css3} - boolean - defines wheter to use JavaScript or CSS3 transforms to scroll within sections. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to true and the browser doesn't support CSS3, a jQuery fallback will be used instead.}
+#'   \item{\code{navigation} - boolean - if set, it will show a navigation bar made up of small circles.}
+#'   \item{\code{touchSensitivity} - numeric value - defines a percentage of the browsers window width/height, and how far a swipe must measure for navigating to the next section.}
+#'   \item{\code{keyboardScrolling} - boolean - defines if the content can be navigated using the keyboard.}
+#'   \item{\code{animateAnchor} - boolean - defines whether the load of the site when given an anchor will scroll with animation to its destination or will directly load on the given section.}
 #' }
 #'
 #' @examples
@@ -87,6 +87,9 @@
 #'
 #' shinyApp(ui, server)
 #' }
+#'
+#'
+#' @seealso \href{Official documentation}{https://github.com/alvarotrigo/pagePiling.js/}.
 #'
 #' @export
 pagePiling <- function(..., sections.color, opts = NULL, menu = NULL, center = FALSE){

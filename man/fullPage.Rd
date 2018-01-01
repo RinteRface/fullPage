@@ -195,3 +195,6 @@ shinyApp(ui, server)
 }
 
 }
+\seealso{
+\href{Official documentation}{https://github.com/alvarotrigo/fullPage.js/}.
+}

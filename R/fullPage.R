@@ -183,6 +183,8 @@
 #' shinyApp(ui, server)
 #' }
 #'
+#' @seealso \href{Official documentation}{https://github.com/alvarotrigo/fullPage.js/}.
+#'
 #' @export
 fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 
