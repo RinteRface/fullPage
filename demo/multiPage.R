@@ -87,7 +87,7 @@ server <- function(input, output){
   })
 
   output$plot2 <- renderPlot({
-    par(bg = "#C0F9F0")
+    par(bg = "#90F9EA")
     hist(rnorm(input$obs, 10, 5))
   })
 
