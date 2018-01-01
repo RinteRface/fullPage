@@ -2,9 +2,15 @@
 % Please edit documentation in R/fullTheme.R
 \name{fullTheme}
 \alias{fullTheme}
+\alias{multiTheme}
+\alias{pageTheme}
 \title{Set theme}
 \usage{
 fullTheme(theme)
+
+multiTheme(theme)
+
+pageTheme(theme)
 }
 \arguments{
 \item{theme}{theme, see details.}
@@ -33,4 +39,37 @@ Valid \code{theme}:
   \item{\code{teal}}
   \item{\code{yellow}}
 }
+}
+\examples{
+if(interactive()){
+
+  ui <- fullPage(
+
+    center = TRUE,
+
+    fullTheme("red"),
+
+    fullSection(
+      center = TRUE,
+      h1("Themes")
+    ),
+    fullSection(
+      fullButtonTo("Move to first section", section = 1)
+    ),
+    fullSection(
+      center = TRUE,
+      fullSlide(
+        fullButtonRight("Slide right", clear = TRUE)
+      ),
+      fullSlide(
+        fullButtonLeft("Slide left", clear = TRUE)
+      )
+    )
+  )
+
+  server <- function(input, output){}
+
+  shinyApp(ui, server)
+}
+
 }

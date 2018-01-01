@@ -24,6 +24,38 @@
 #'   \item{\code{yellow}}
 #' }
 #'
+#' @examples
+#' if(interactive()){
+#'
+#'   ui <- fullPage(
+#'
+#'     center = TRUE,
+#'
+#'     fullTheme("red"),
+#'
+#'     fullSection(
+#'       center = TRUE,
+#'       h1("Themes")
+#'     ),
+#'     fullSection(
+#'       fullButtonTo("Move to first section", section = 1)
+#'     ),
+#'     fullSection(
+#'       center = TRUE,
+#'       fullSlide(
+#'         fullButtonRight("Slide right", clear = TRUE)
+#'       ),
+#'       fullSlide(
+#'         fullButtonLeft("Slide left", clear = TRUE)
+#'       )
+#'     )
+#'   )
+#'
+#'   server <- function(input, output){}
+#'
+#'   shinyApp(ui, server)
+#' }
+#'
 #' @rdname theme
 #' @export
 fullTheme <- function(theme){
@@ -42,3 +74,11 @@ fullTheme <- function(theme){
     )
   )
 }
+
+#' @rdname theme
+#' @export
+multiTheme <- fullTheme
+
+#' @rdname theme
+#' @export
+pageTheme <- fullTheme

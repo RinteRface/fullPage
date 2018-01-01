@@ -49,7 +49,6 @@
 #'   server <- function(input, output){}
 #'
 #'   shinyApp(ui, server)
-#'
 #' }
 #'
 #' @rdname button

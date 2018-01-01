@@ -104,7 +104,6 @@ if(interactive()){
   server <- function(input, output){}
 
   shinyApp(ui, server)
-
 }
 
 }
