@@ -1,31 +1,33 @@
 #' Setup a multiscroll page
 #'
+#' Create a multiscroll page.
+#'
 #' @inheritParams fullPage
 #' @param center whether to center text horizontally.
 #'
-#' @details use the \code{menu} parameter on one "side" (\code{multiLeft} or \code{multiRight}) only;
+#' @details use the \code{menu} parameter on one "side" (\code{\link{multiLeft}} or \code{\link{multiRight}}) only;
 #' No need to specify it twice, it would breaks things as it is a \code{CSS} id, see examples.
 #'
 #' Valid \code{opts}:
 #' \itemize{
-#'   \item{\code{verticalCentered} - boolean}
-#'   \item{\code{scrollingSpeed} - numeric}
+#'   \item{\code{verticalCentered} - boolean - vertically centering of the content within sections.}
+#'   \item{\code{scrollingSpeed} - numeric - speed in milliseconds for the scrolling transitions.}
 #'   \item{\code{easing} - character string, \href{jQuery UI}{http://jqueryui.com/} easing, i.e.: \code{easeInQuart}}
 #'   \item{\code{sectionsColor} - character vector, i.e.: \code{c("blue", "red")}}
-#'   \item{\code{navigation} - boolean}
+#'   \item{\code{navigation} - boolean - if set, it will show a navigation bar made up of small circles.}
 #'   \item{\code{navigationPosition} - character string, takes \code{none}, \code{left}, or \code{right}}
 #'   \item{\code{navigationColor} - character string, i.e.:"black"}
 #'   \item{\code{navigationTooltips} - character vector, i.e.: \code{c("Tooltip 1", "Tooltip 2")}}
-#'   \item{\code{loopBottom} - boolean}
-#'   \item{\code{loopTop} - boolean}
-#'   \item{\code{css3} - boolnean}
-#'   \item{\code{paddingTop} - numeric, i.e.: 0}
-#'   \item{\code{paddingBottom} - numeric, i.e.: 0}
-#'   \item{\code{keyboardScrolling} boolean}
-#'   \item{\code{touchSensitivity} - numeric, i.e.: 5}
-#'   \item{\code{responsiveWidth} - numeric, i.e.: 0}
-#'   \item{\code{responsiveHeight} - numeric, i.e.: 0}
-#'   \item{\code{responsiveExpand} - boolean}
+#'   \item{\code{loopBottom} - boolean - defines whether scrolling down in the last section should scroll to the first one or not.}
+#'   \item{\code{loopTop} - boolean - defines whether scrolling up in the first section should scroll to the last one or not.}
+#'   \item{\code{css3} - boolean - defines wheter to use JavaScript or CSS3 transforms to scroll within sections. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to true and the browser doesn't support CSS3, a jQuery fallback will be used instead.}
+#'   \item{\code{paddingTop} - defines the top padding for each section with a numerical value and its measure, i.e.: \code{5em}}
+#'   \item{\code{paddingBottom} - defines the bottom padding for each section with a numerical value and its measure , i.e.: \code{10px}}
+#'   \item{\code{keyboardScrolling} boolean - defines if the content can be navigated using the keyboard}
+#'   \item{\code{touchSensitivity} - numeric - defines a percentage of the browsers window width/height, and how far a swipe must measure for navigating to the next section, i.e.: \code{5}}
+#'   \item{\code{responsiveWidth} - a class \code{ms-responsive} is added to the body tag in case the user wants to use it for his own responsive CSS. For example, if set to 900, whenever the browser's width is less than 900 the plugin will scroll like a normal site.}
+#'   \item{\code{responsiveHeight} - a class \code{ms-responsive} is added to the body tag in case the user wants to use it for his own responsive CSS. For example, if set to 900, whenever the browser's height is less than 900 the plugin will scroll like a normal site.}
+#'   \item{\code{responsiveExpand} - boolean - when responsive mode is fired (by using the \code{responsiveWidth} or \code{responsiveHeight} options) it turns auto scrolling off and expands each left and right side into a full-width section placing one after another. Then the page can be scrolled normally. \href{Read more about how to use the Responsive Expand option.}{https://github.com/alvarotrigo/multiscroll.js/wiki/Responsive-Expand-Extension}}
 #' }
 #'
 #' @examples
@@ -104,6 +106,8 @@
 #'
 #' shinyApp(ui, server)
 #' }
+#'
+#' @seealso \href{Official documentation}{https://github.com/alvarotrigo/multiscroll.js}.
 #'
 #' @rdname mp
 #' @export
