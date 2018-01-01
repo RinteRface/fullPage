@@ -7,6 +7,7 @@
 #' @param center horizontally center all sections.
 #' @param ... any element.
 #'
+#'
 #' @details
 #' Valid \code{opts}:
 #' \itemize{
