@@ -86,7 +86,7 @@ ui <- fullPage(
   fullSection(
     menu = "sisters",
     h1("Sister functions"),
-    verbatimTextOutput("sisters")
+    verbatimTextOutput("sistersDemo")
   )
 )
 
@@ -107,7 +107,7 @@ server <- function(input, output){
     plot(1:nrow(mtcars), mtcars$drat, type = "l")
   })
 
-  output$sisters <- renderText({
+  output$sistersDemo <- renderText({
     '# See those
     demo("pagePiling", package = "fullPage")
     demo("multiPage", package = "fullPage")'
