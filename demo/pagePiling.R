@@ -1,3 +1,4 @@
+library(fullPage)
 library(shiny)
 
 ui <- pagePiling(

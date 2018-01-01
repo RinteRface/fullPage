@@ -5,15 +5,17 @@
 \alias{multiRight}
 \title{Create multi sections}
 \usage{
-multiLeft(...)
+multiLeft(..., align = NULL)
 
-multiRight(...)
+multiRight(..., align = NULL)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{align}{text alignement passed to \code{CSS}, takes \code{left}, \code{right} or \code{center}.}
 }
 \description{
-Create multi page side.
+Create multi page sides.
 }
 \details{
 Only use one of each in \code{\link{multiPage}}.

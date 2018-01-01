@@ -26,6 +26,14 @@ devtools::install_github("JohnCoene/fullPage")
 * [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/) -- functions starting with `page`.
 * [multiScroll.js](https://github.com/alvarotrigo/multiscroll.js) -- functions starting with `multi`.
 
+**OR**
+
+```r
+demo("fullPage", package = "fullPage")
+demo("pagePiling", package = "fullPage")
+demo("multiPage", package = "fullPage")
+```
+
 All ship with:
 
 * [Milligram](https://milligram.io/) *grid, button, typography*
