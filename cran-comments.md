@@ -15,5 +15,5 @@ This is a new release, so there are no reverse dependencies.
 
 ---
 
-* I have run R CMD check on the NUMBER downstream dependencies--`devtools::build_win()`:
+* `devtools::build_win()`:
   [https://win-builder.r-project.org/tewhnpRN3Tyi/](https://win-builder.r-project.org/tewhnpRN3Tyi/). 
