@@ -11,7 +11,7 @@ ui <- pagePiling(
     "#C490F4",
     "#4B97D2"
   ),
-  pageTheme("gray"),
+  pageTheme("maroon"),
   menu = c(
     "Piling" = "intro",
     "Grid" = "grid",
@@ -29,7 +29,9 @@ ui <- pagePiling(
     h1("Grid"),
     pageRow(
       pageColumn(
-        h2("Columns")
+        h2("Columns"),
+        p("plot on the right on larger screens"),
+        p("And on below on mobile.")
       ),
       pageColumn(
         plotOutput("plot1")
@@ -38,21 +40,40 @@ ui <- pagePiling(
   ),
   pageSectionPlot(
     "plot2",
-    h1("Background Plot")
+    pageContainer(
+      pageRow(
+        pageColumn(),
+        pageColumn(
+          h1("Background Plot"),
+          sliderInput(
+            "slider",
+            "Overlay input",
+            min = 50,
+            max = 250,
+            value = 100
+          )
+        ),
+        pageColumn()
+      )
+    )
   ),
   pageSection(
     menu = "themes",
-    h1("16 themes"),
-    verbatimTextOutput("themes")
+    pageContainer(
+      h1("16 themes"),
+      verbatimTextOutput("themes")
+    )
   ),
   pageSection(
-    h1("Buttons"),
+    h1("Buttons", style = "color:#f3f3f3;"),
     pageButtonDown("Next Section")
   ),
-  fullSection(
+  pageSection(
     menu = "sisters",
-    h1("Sister functions"),
-    verbatimTextOutput("sisters")
+    pageContainer(
+      h1("Sister functions", style = "color:#f3f3f3;"),
+      verbatimTextOutput("sisters")
+    )
   )
 )
 
@@ -65,7 +86,7 @@ server <- function(input, output){
 
   output$plot2 <- renderPlot({
     par(bg = "#FFBDE1")
-    hist(rnorm(100, mean = 25, sd = 5))
+    hist(rnorm(input$slider, mean = 25, sd = 5))
   })
 
   output$plot3 <- renderPlot({
