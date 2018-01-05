@@ -2,7 +2,7 @@
 
 # fullPage
 
-![FullPage](http://john-coene.com/img/fullPage.gif)
+![FullPage](http://john-coene.com/img/fullPage2.gif)
 
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
