@@ -37,7 +37,7 @@ Valid \code{opts}:
   \item{\code{navigationTooltips} - character vector, i.e.: \code{c("Tooltip 1", "Tooltip 2")}}
   \item{\code{loopBottom} - boolean - defines whether scrolling down in the last section should scroll to the first one or not.}
   \item{\code{loopTop} - boolean - defines whether scrolling up in the first section should scroll to the last one or not.}
-  \item{\code{css3} - boolean - defines wheter to use JavaScript or CSS3 transforms to scroll within sections. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to true and the browser doesn't support CSS3, a jQuery fallback will be used instead.}
+  \item{\code{css3} - boolean - defines whether to use JavaScript or CSS3 transforms to scroll within sections. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to true and the browser doesn't support CSS3, a jQuery fallback will be used instead.}
   \item{\code{paddingTop} - defines the top padding for each section with a numerical value and its measure, i.e.: \code{5em}}
   \item{\code{paddingBottom} - defines the bottom padding for each section with a numerical value and its measure , i.e.: \code{10px}}
   \item{\code{keyboardScrolling} boolean - defines if the content can be navigated using the keyboard}
@@ -49,6 +49,10 @@ Valid \code{opts}:
 }
 \examples{
 if(interactive()){
+# Run de demo
+demo("muliPage", package = "fullPage")
+
+# OR
 library(shiny)
 
 options <- list(

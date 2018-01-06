@@ -25,6 +25,10 @@
 #'
 #' @examples
 #' if(interactive()){
+#' # Run de demo
+#' demo("pagePiling", package = "fullPage")
+#'
+#' # Or
 #' library(shiny)
 #'
 #' options <- list(

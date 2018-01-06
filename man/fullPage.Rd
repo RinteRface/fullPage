@@ -69,6 +69,10 @@ Valid \code{opts}:
 }
 \examples{
 \dontrun{
+# Run de demo
+demo("fullPage", package = "fullPage")
+
+# Or this
 library(shiny)
 
 options <- list(
