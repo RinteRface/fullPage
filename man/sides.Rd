@@ -12,7 +12,7 @@ multiRight(..., align = NULL)
 \arguments{
 \item{...}{any element.}
 
-\item{align}{text alignement passed to \code{CSS}, takes \code{left}, \code{right} or \code{center}.}
+\item{align}{text alignment passed to \code{CSS}, takes \code{left}, \code{right} or \code{center}.}
 }
 \description{
 Create multi page sides.

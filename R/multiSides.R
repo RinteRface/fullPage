@@ -2,7 +2,7 @@
 #'
 #' Create multi page sides.
 #'
-#' @param align text alignement passed to \code{CSS}, takes \code{left}, \code{right} or \code{center}.
+#' @param align text alignment passed to \code{CSS}, takes \code{left}, \code{right} or \code{center}.
 #' @param ... any element.
 #'
 #' @details Only use one of each in \code{\link{multiPage}}.
