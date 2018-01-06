@@ -1,11 +1,13 @@
 Package: fullPage
-Title: fullPage.js for shiny
+Title: Fullpage.js, Pagepiling.js and Multiscroll.js for Shiny
 Version: 0.0.1
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
-Description: fullPage.js for shiny.
+Description: Fullpage.js, pagepiling.js and multiscroll.js for shiny.
 Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: shiny, jsonlite
 RoxygenNote: 6.0.1
+URL: https://github.com/JohnCoene/fullPage
+BugReports: https://github.com/JohnCoene/fullPage/issues
