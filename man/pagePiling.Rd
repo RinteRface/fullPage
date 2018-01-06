@@ -28,7 +28,7 @@ Create a pilling page.
   \item{\code{easing} - character string - takes \code{swing} or \code{linear}.}
   \item{\code{loopBottom} - boolean - defines whether scrolling down in the last section should scroll to the first one or not.}
   \item{\code{loopTop} - boolean - defines whether scrolling up in the first section should scroll to the last one or not.}
-  \item{\code{css3} - boolean - defines wheter to use JavaScript or CSS3 transforms to scroll within sections. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to true and the browser doesn't support CSS3, a jQuery fallback will be used instead.}
+  \item{\code{css3} - boolean - defines whether to use JavaScript or CSS3 transforms to scroll within sections. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to true and the browser doesn't support CSS3, a jQuery fallback will be used instead.}
   \item{\code{navigation} - boolean - if set, it will show a navigation bar made up of small circles.}
   \item{\code{touchSensitivity} - numeric value - defines a percentage of the browsers window width/height, and how far a swipe must measure for navigating to the next section.}
   \item{\code{keyboardScrolling} - boolean - defines if the content can be navigated using the keyboard.}

@@ -55,7 +55,7 @@ Valid \code{opts}:
   \item{\code{animateAnchor} - defines whether the load of the site when given an anchor will scroll with animation to its destination or will directly load on the given section.}
   \item{\code{recordHistory} - defines whether to push the state of the site to the browser's history. When set to true each section/slide of the site will act as a new page and the back and forward buttons of the browser will scroll the sections/slides to reach the previous or next state of the site. When set to \code{FALSE}, the URL will keep changing but will have no effect on the browser's history. This option is automatically turned off when using \code{autoScrolling = FALSE}.}
   \item{\code{controlArrows} - determines whether to use control arrows for the slides to move right or left.}
-  \item{\code{verticalCentered} - dertically centering of the content within sections.}
+  \item{\code{verticalCentered} - vertically centering of the content within sections.}
   \item{\code{sectionsColor} - defines sections' background colour.}
   \item{\code{paddingTop} - defines the top padding for each section with a numerical value and its measure, i.e.: \code{10em}.}
   \item{\code{paddingBottom} - defines the bottom padding for each section with a numerical value and its measure, i.e.: \code{10em}.}
