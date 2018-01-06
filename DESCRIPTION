@@ -1,8 +1,8 @@
 Package: fullPage
-Title: Fullpage.js, Pagepiling.js and Multiscroll.js for Shiny
+Title: This package includes Fullpage.js, Pagepiling.js and Multiscroll.js for Shiny
 Version: 0.0.1
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
-Description: Fullpage.js, pagepiling.js and multiscroll.js for shiny.
+Description: This package includes functions to build full scrolling websites with shiny.
 Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
