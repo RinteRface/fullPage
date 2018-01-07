@@ -16,7 +16,7 @@
 \alias{multiButtonUp}
 \alias{multiButtonDown}
 \alias{multiButtonTo}
-\title{Add a button}
+\title{Add buttons}
 \usage{
 fullButton(..., outline = FALSE, clear = FALSE)
 
@@ -58,7 +58,10 @@ multiButtonTo(..., section, outline = FALSE, clear = FALSE)
 \item{fun}{Javascript function to pass to button.}
 }
 \description{
-Add a button
+Add buttons to your \code{\link{fullPage}}, \code{\link{pagePiling}} and \code{\link{multiPage}}.
+}
+\details{
+See example for \code{*Custom} button.
 }
 \examples{
 library(shiny)
@@ -95,7 +98,7 @@ if(interactive()){
       )
     ),
     fullSection(
-      p("Disables keyword scrolling"),
+      p("Disables keyboard scrolling"),
       fullButtonCustom("Custom button",
         fun = "$.fn.fullpage.setKeyboardScrolling(false, 'down, right');")
     )

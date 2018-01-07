@@ -1,9 +1,13 @@
-#' Add a button
+#' Add buttons
+#'
+#' Add buttons to your \code{\link{fullPage}}, \code{\link{pagePiling}} and \code{\link{multiPage}}.
 #'
 #' @param outline,clear set outline or clear button.
 #' @param ... any other element
 #' @param section,slide target section and/or slide.
 #' @param fun Javascript function to pass to button.
+#'
+#' @details See example for \code{*Custom} button.
 #'
 #' @examples
 #' library(shiny)
@@ -40,7 +44,7 @@
 #'       )
 #'     ),
 #'     fullSection(
-#'       p("Disables keyword scrolling"),
+#'       p("Disables keyboard scrolling"),
 #'       fullButtonCustom("Custom button",
 #'         fun = "$.fn.fullpage.setKeyboardScrolling(false, 'down, right');")
 #'     )
