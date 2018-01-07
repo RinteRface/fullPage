@@ -2,7 +2,7 @@
 % Please edit documentation in R/fullPage.R
 \name{fullPage}
 \alias{fullPage}
-\title{Setup fullPage}
+\title{Setup a page.}
 \usage{
 fullPage(..., opts = NULL, menu = NULL, center = FALSE)
 }
@@ -16,7 +16,7 @@ fullPage(..., opts = NULL, menu = NULL, center = FALSE)
 \item{center}{horizontally center all sections.}
 }
 \description{
-Create a fullpage.
+Create a fullPage.
 }
 \details{
 Valid \code{opts}:

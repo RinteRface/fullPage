@@ -1,6 +1,6 @@
-#' Setup fullPage
+#' Setup a page.
 #'
-#' Create a fullpage.
+#' Create a fullPage.
 #'
 #' @param opts a list of options, see details.
 #' @param menu named vector of menu links.
