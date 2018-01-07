@@ -7,7 +7,7 @@
 \usage{
 multiPage(..., opts = NULL, menu = NULL)
 
-multiSection(..., menu = NULL, center = FALSE)
+multiSection(..., menu = NULL, alignment = "none")
 }
 \arguments{
 \item{...}{any element.}
@@ -16,7 +16,7 @@ multiSection(..., menu = NULL, center = FALSE)
 
 \item{menu}{named vector of menu links.}
 
-\item{center}{whether to center text horizontally.}
+\item{alignment}{align text \code{left}, \code{right} or, \code{center}, defaults to \code{none}.}
 }
 \description{
 Create a multiscroll page.

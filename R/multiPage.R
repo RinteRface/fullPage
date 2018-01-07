@@ -3,7 +3,7 @@
 #' Create a multiscroll page.
 #'
 #' @inheritParams fullPage
-#' @param center whether to center text horizontally.
+#' @param alignment align text \code{left}, \code{right} or, \code{center}, defaults to \code{none}.
 #'
 #' @details use the \code{menu} parameter on one "side" (\code{\link{multiLeft}} or \code{\link{multiRight}}) only;
 #' No need to specify it twice, it would breaks things as it is a \code{CSS} id, see examples.
@@ -206,7 +206,11 @@ multiPage <- function(..., opts = NULL, menu = NULL){
 
 #' @rdname mp
 #' @export
-multiSection <- function(..., menu = NULL, center = FALSE){
+multiSection <- function(..., menu = NULL, alignment = "none"){
+
+  if(!alignment %in% c("none", "left", "right", "center"))
+    stop("Incorrect alignment, must be one of none, left, right or, center.", call. = FALSE)
+
   div <- shiny::tags$div(
     class = "ms-section",
     ...
@@ -215,8 +219,8 @@ multiSection <- function(..., menu = NULL, center = FALSE){
   if(!is.null(menu))
     div <- shiny::tagAppendAttributes(div, `data-anchor` = menu)
 
-  if(isTRUE(center))
-    div <- shiny::tagAppendAttributes(div, style = "text-align: center;")
+  if(alignment != "none")
+    div <- shiny::tagAppendAttributes(div, style = paste0("text-align: ", alignment, ";"))
 
   div
 }
