@@ -8,6 +8,7 @@ options <- list(
     "#FFADB2",
     "#FFCAB1",
     "#C3F3EC",
+    "#FFFFFF",
     "#FE9199",
     "#FFADB2"
   )
@@ -22,6 +23,7 @@ ui <- fullPage(
     "Grid" = "grid",
     "Plots bg" = "plotbg",
     "Slides bg" = "slidebg",
+    "Images" = "images",
     "Buttons" = "buttons",
     "Sisters" = "sisters"
   ),
@@ -75,7 +77,20 @@ ui <- fullPage(
     ),
     fullSlidePlot(
       "plot3"
+    ),
+    fullSlideImage(
+      img = paste0(
+        "https://raw.githubusercontent.com/alvarotrigo/",
+        "fullPage.js/master/examples/imgs/bg5.jpg"),
+      h2("Image background")
     )
+  ),
+  fullSectionImage( # will not show in viewer, open in browser
+    menu = "images",
+    img = paste0(
+      "https://raw.githubusercontent.com/alvarotrigo/",
+      "fullPage.js/master/examples/imgs/bg2.jpg"),
+    h1("Image background")
   ),
   fullSection(
     menu = "buttons",
@@ -86,8 +101,10 @@ ui <- fullPage(
   ),
   fullSection(
     menu = "sisters",
-    h1("Sister functions"),
-    verbatimTextOutput("sistersDemo")
+    fullContainer(
+      h1("Sister functions"),
+      verbatimTextOutput("sistersDemo")
+    )
   )
 )
 

@@ -2,7 +2,7 @@ library(fullPage)
 library(shiny)
 
 options <- list(
-  sectionsColor = c("#E0FFFA", "#CEFFF2", "#C0F9F0", "#90F9EA", "#394C54", "#E0FFFA")
+  sectionsColor = c("#E0FFFA", "#CEFFF2", "#C0F9F0", "#90F9EA", "#000", "#394C54", "#E0FFFA")
 )
 
 ui <- multiPage(
@@ -12,7 +12,8 @@ ui <- multiPage(
     "multiPage" = "multipage",
     "Split" = "split",
     "Grid" = "grid",
-    "Plot" = "plot",
+    "Plots" = "plot",
+    "Images" = "images",
     "Buttons" = "buttons",
     "Sisters" = "sisters"
   ),
@@ -48,6 +49,10 @@ ui <- multiPage(
       )
     ),
     multiSection(
+      menu = "images",
+      h1("Image ")
+    ),
+    multiSection(
       menu = "buttons",
       center = TRUE,
       h1("Add buttons", style = "color: white;")
@@ -69,6 +74,11 @@ ui <- multiPage(
       h1("<- Grid")
     ),
     multiSectionPlot("plot2"),
+    multiSectionImage(
+      img = "https://alvarotrigo.com/multiScroll/imgs/tiger.jpg",
+      side = "right",
+      h1("Background")
+    ),
     multiSection(
       center = TRUE,
       multiButtonDown("Next section", outline = TRUE)

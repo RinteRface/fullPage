@@ -7,6 +7,7 @@ ui <- pagePiling(
     "#4B97D2",
     "#FFE6F4",
     "#FFBDE1",
+    "#FFBDE1",
     "#AEFFAC",
     "#C490F4",
     "#4B97D2"
@@ -15,7 +16,8 @@ ui <- pagePiling(
   menu = c(
     "Piling" = "intro",
     "Grid" = "grid",
-    "Backgrounds" = "backgrounds",
+    "Plots" = "backgrounds",
+    "Images" = "image",
     "Themes" = "themes",
     "Buttons" = "buttons",
     "sisters" = "sisters"
@@ -40,6 +42,7 @@ ui <- pagePiling(
   ),
   pageSectionPlot(
     "plot2",
+    menu = "backgrounds",
     pageContainer(
       pageRow(
         pageColumn(),
@@ -56,6 +59,13 @@ ui <- pagePiling(
         pageColumn()
       )
     )
+  ),
+  pageSectionImage( # will not show in viewer, open in browser
+    menu = "image",
+    img = paste0(
+      "https://raw.githubusercontent.com/alvarotrigo/",
+      "fullPage.js/master/examples/imgs/bg2.jpg"),
+    h1("Image background")
   ),
   pageSection(
     menu = "themes",
