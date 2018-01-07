@@ -3,7 +3,6 @@
 #' Create a full scrolling page.
 #'
 #' @inheritParams fullPage
-#' @param alignment align text \code{left}, \code{right} or, \code{center}, defaults to \code{none}.
 #'
 #' @details use the \code{menu} parameter on one "side" (\code{\link{multiLeft}} or \code{\link{multiRight}}) only;
 #' No need to specify it twice, it would breaks things as it is a \code{CSS} id, see examples.
@@ -39,19 +38,20 @@
 #' library(shiny)
 #'
 #' options <- list(
-#'   sectionsColor = c("#4BBFC3", "#7BAABE", "lightgray")
+#'   sectionsColor = c("#4BBFC3", "#7BAABE", "#d3d3d3", "#000")
 #' )
 #'
 #' ui <- multiPage(
 #'   opts = options,
 #'   menu = c("Multi Scroll" = "multiscroll",
 #'            "Plots" = "plots",
-#'            "Full Section plots" = "fullplots"),
+#'            "Full Section plots" = "fullplots",
+#'            "Images" = "images"),
 #'   multiLeft(
+#'     align = "right",
 #'     multiSection(
-#'       center = TRUE,
 #'       menu = "multiscroll",
-#'       h1("Multiple")
+#'       h1("Multi")
 #'     ),
 #'     multiSection(
 #'       menu = "plots",
@@ -69,20 +69,22 @@
 #'     multiSectionPlot(
 #'       menu = "fullplots",
 #'       "fullPlot"
+#'     ),
+#'     multiSection(
+#'       menu = "images",
+#'       h1("Image ")
 #'     )
 #'   ),
 #'   multiRight(
+#'     align = "left",
 #'     multiSection(
-#'       center = TRUE,
-#'       h1("scroll")
+#'       h1("Page()")
 #'     ),
 #'     multiSection(
-#'       center = TRUE,
 #'       plotOutput("plot")
 #'     ),
 #'     multiSection(
 #'       multiContainer(
-#'         center = TRUE,
 #'         h1("<- Full Section plot"),
 #'         sliderInput(
 #'           "number",
@@ -92,6 +94,11 @@
 #'           value = 10
 #'         )
 #'       )
+#'     ),
+#'     multiSectionImage(
+#'       img = "https://alvarotrigo.com/multiScroll/imgs/tiger.jpg",
+#'       side = "right",
+#'       h1("Background")
 #'     )
 #'   )
 #' )
@@ -99,11 +106,12 @@
 #' server <- function(input, output){
 #'
 #'   output$plot <- renderPlot({
+#'     par(bg = "#7BAABE")
 #'     hist(rnorm(100, 20, input$max))
 #'   })
 #'
 #'   output$fullPlot <- renderPlot({
-#'     par(bg = "gray")
+#'     par(bg = "#d3d3d3")
 #'     hist(rnorm(input$number, 20, 250))
 #'   })
 #' }
@@ -113,7 +121,6 @@
 #'
 #' @seealso \href{Official documentation}{https://github.com/alvarotrigo/multiscroll.js}.
 #'
-#' @rdname mp
 #' @export
 multiPage <- function(..., opts = NULL, menu = NULL){
 
@@ -204,11 +211,63 @@ multiPage <- function(..., opts = NULL, menu = NULL){
   )
 }
 
+#' Create multi sections
+#'
+#' Create multi sections.
+#'
+#' @inheritParams fullPage
+#' @param align text alignment, takes \code{left}, \code{right} or, \code{center}, defaults to \code{none}.
+#' @param img path to image.
+#' @param side image side.
+#'
+#' @examples
+#' if(interactive()){
+#'   library(shiny)
+#'
+#'   options <- list(
+#'     sectionsColor = c("#f3f3f3", "#d3d3d3", "#000")
+#'   )
+#'
+#'   ui <- multiPage(
+#'     opts = options,
+#'     multiLeft(
+#'       align = "right",
+#'       multiSection(
+#'         h1("multi")
+#'       ),
+#'       multiSection(
+#'         h2("Section ")
+#'       ),
+#'       multiSection(
+#'         h2("Image ")
+#'       )
+#'     ),
+#'     multiRight(
+#'       align = "left",
+#'       multiSection(
+#'         h1("page()")
+#'       ),
+#'       multiSection(
+#'         h2(" 2")
+#'       ),
+#'       multiSectionImage(
+#'         img = "https://alvarotrigo.com/multiScroll/imgs/tiger.jpg",
+#'         side = "right",
+#'         h2("Background")
+#'       )
+#'     )
+#'   )
+#'
+#'   server <- function(input, output){}
+#'
+#'   shinyApp(ui, server)
+#' }
+#'
 #' @rdname mp
 #' @export
-multiSection <- function(..., menu = NULL, alignment = "none"){
+multiSection <- function(..., menu = NULL, align = "none"){
 
-  if(!alignment %in% c("none", "left", "right", "center"))
+  if(!align %in% c("none", "left", "right", "center"))
     stop("Incorrect alignment, must be one of none, left, right or, center.", call. = FALSE)
 
   div <- shiny::tags$div(
@@ -219,8 +278,54 @@ multiSection <- function(..., menu = NULL, alignment = "none"){
   if(!is.null(menu))
     div <- shiny::tagAppendAttributes(div, `data-anchor` = menu)
 
-  if(alignment != "none")
-    div <- shiny::tagAppendAttributes(div, style = paste0("text-align: ", alignment, ";"))
+  if(align != "none")
+    div <- shiny::tagAppendAttributes(div, style = paste0("text-align: ", align, ";"))
 
   div
+}
+
+#' @rdname mp
+#' @export
+multiSectionImage <- function(..., img, side, menu = NULL, align = "none"){
+
+  if(missing(img))
+    stop("must pass path to image", call. = FALSE)
+
+  if(missing(side))
+    stop("must pass side", call. = FALSE)
+
+  if(!align %in% c("none", "left", "right", "center"))
+    stop("Incorrect alignment, must be one of none, left, right or, center.", call. = FALSE)
+
+  id <- rand()
+
+  # image css
+  style <- paste0(
+    '.ms-', side, ' .', id, '{
+      background-image: url("', img, '");
+      background-repeat: no-repeat;
+      background-position: ', side, ';
+      background-size: auto 100%;
+    }'
+  )
+
+  div <- shiny::tags$div(
+    class = paste("ms-section", id),
+    ...
+  )
+
+  if(!is.null(menu))
+    div <- shiny::tagAppendAttributes(div, `data-anchor` = menu)
+
+  if(align != "none")
+    div <- shiny::tagAppendAttributes(div, style = paste0("text-align: ", align, ";"))
+
+  shiny::tagList(
+    shiny::tags$head(
+      shiny::tags$style(
+        style
+      )
+    ),
+    div
+  )
 }

@@ -292,6 +292,7 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #'
 #' @param menu menu link.
 #' @param center whether to center text horizontally.
+#' @param img path to image.
 #' @param ... any element.
 #'
 #' @examples
@@ -300,14 +301,25 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #' library(shiny)
 #'
 #' ui <- fullPage(
+#'   center = TRUE,
 #'   opts = list(
 #'     sectionsColor = c("#f3f3f3", "#4BBFC3")
 #'   ),
 #'   fullSection(h1("First section"), center = TRUE),
 #'   fullSection(
-#'     center = TRUE,
 #'     fullSlide(h2("Slide 1")),
-#'     fullSlide(h2("Slide 2"))
+#'     fullSlideImage(
+#'       img = paste0(
+#'         "https://raw.githubusercontent.com/alvarotrigo/",
+#'         "fullPage.js/master/examples/imgs/bg5.jpg"),
+#'       h2("Image background")
+#'     )
+#'   ),
+#'   fullSectionImage( # will not show in viewer, open in browser
+#'     img = paste0(
+#'       "https://raw.githubusercontent.com/alvarotrigo/",
+#'       "fullPage.js/master/examples/imgs/bg2.jpg"),
+#'     h1("Image background")
 #'   )
 #' )
 #'
@@ -315,6 +327,8 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #'
 #' shinyApp(ui, server)
 #' }
+#'
+#' @details \code{fullSectionImage} and \code{fullSlideImage} do not work in RStudio viewer, open in browser.
 #'
 #' @rdname fp
 #' @export
@@ -352,4 +366,100 @@ fullSlide <- function(..., menu = NULL, center = FALSE){
 
 #' @rdname fp
 #' @export
+fullSectionImage <- function(..., img, menu = NULL, center = FALSE){
+
+  if(missing(img))
+    stop("must pass path to image", call. = FALSE)
+
+  if(is.null(menu)){
+    id <- rand()
+  } else {
+    id <- menu
+  }
+
+  # image css
+  style <- paste0(
+    '#', id, '{
+      background-image: url(', img, ');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }'
+  )
+
+  div <- shiny::tags$div(
+    class = "section",
+    id = id,
+    ...
+  )
+
+  if(!is.null(menu))
+    div <- shiny::tagAppendAttributes(div, `data-anchor` = menu)
+
+  if(isTRUE(center))
+    div <- shiny::tagAppendAttributes(div, style = "text-align: center;")
+
+  shiny::tagList(
+    shiny::tags$head(
+      shiny::tags$style(
+        style
+      )
+    ),
+    div
+  )
+}
+
+#' @rdname fp
+#' @export
+fullSlideImage <- function(..., img, menu = NULL, center = FALSE){
+
+  if(missing(img))
+    stop("must pass path to image", call. = FALSE)
+
+  if(is.null(menu)){
+    id <- rand()
+  } else {
+    id <- menu
+  }
+
+  # image css
+  style <- paste0(
+    '#', id, '{
+      background-image: url(', img, ');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }'
+  )
+
+  div <- shiny::tags$div(
+    class = "slide",
+    id = id,
+    ...
+  )
+
+  if(!is.null(menu))
+    div <- shiny::tagAppendAttributes(div, `data-anchor` = menu)
+
+  if(isTRUE(center))
+    div <- shiny::tagAppendAttributes(div, style = "text-align: center;")
+
+  shiny::tagList(
+    shiny::tags$head(
+      shiny::tags$style(
+        style
+      )
+    ),
+    div
+  )
+}
+
+#' @rdname fp
+#' @export
 pageSection <- fullSection
+
+#' @rdname fp
+#' @export
+pageSectionImage <- fullSectionImage

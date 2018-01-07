@@ -36,34 +36,32 @@
 #' )
 #'
 #' ui <- pagePiling(
+#'   center = TRUE,
 #'   sections.color = c('#f2f2f2', '#2C3E50', '#39C'),
 #'   opts = options,
 #'   menu = c("Section 1" = "section1",
 #'            "Piling" = "section2",
 #'            "Plots" = "section3",
-#'            "Layers" = "section4"),
+#'            "Reactive" = "section4",
+#'            "Images" = "images"),
 #'   pageSection(
-#'     center = TRUE,
 #'     menu = "section1",
 #'     h1("Page piling")
 #'   ),
 #'   pageSection(
 #'     menu = "section2",
-#'     center = TRUE,
 #'     h1("Section 2")
 #'   ),
 #'   pageSectionPlot(
 #'     "plot",
-#'     center = TRUE,
 #'     menu = "section3",
 #'     h1("Plot background")
 #'   ),
 #'   pageSectionPlot(
 #'     "plot2",
-#'     center = TRUE,
 #'     menu = "section4",
 #'     pageContainer(
-#'       h1("Layer anything"),
+#'       h1("Reactive background"),
 #'       sliderInput(
 #'         "bins",
 #'         "Data Points",
@@ -73,6 +71,13 @@
 #'         value = 200
 #'       )
 #'     )
+#'   ),
+#'   pageSectionImage( # will not show in viewer, open in browser
+#'     menu = "image",
+#'     img = paste0(
+#'       "https://raw.githubusercontent.com/alvarotrigo/",
+#'       "fullPage.js/master/examples/imgs/bg2.jpg"),
+#'     h1("Image background")
 #'   )
 #' )
 #'

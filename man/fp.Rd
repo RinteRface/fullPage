@@ -3,14 +3,23 @@
 \name{fullSection}
 \alias{fullSection}
 \alias{fullSlide}
+\alias{fullSectionImage}
+\alias{fullSlideImage}
 \alias{pageSection}
+\alias{pageSectionImage}
 \title{Sections and Slides}
 \usage{
 fullSection(..., menu = NULL, center = FALSE)
 
 fullSlide(..., menu = NULL, center = FALSE)
 
+fullSectionImage(..., img, menu = NULL, center = FALSE)
+
+fullSlideImage(..., img, menu = NULL, center = FALSE)
+
 pageSection(..., menu = NULL, center = FALSE)
+
+pageSectionImage(..., img, menu = NULL, center = FALSE)
 }
 \arguments{
 \item{...}{any element.}
@@ -18,9 +27,14 @@ pageSection(..., menu = NULL, center = FALSE)
 \item{menu}{menu link.}
 
 \item{center}{whether to center text horizontally.}
+
+\item{img}{path to image.}
 }
 \description{
 Add sections and slides.
+}
+\details{
+\code{fullSectionImage} and \code{fullSlideImage} do not work in RStudio viewer, open in browser.
 }
 \examples{
 if(interactive()){
@@ -28,14 +42,25 @@ if(interactive()){
 library(shiny)
 
 ui <- fullPage(
+  center = TRUE,
   opts = list(
     sectionsColor = c("#f3f3f3", "#4BBFC3")
   ),
   fullSection(h1("First section"), center = TRUE),
   fullSection(
-    center = TRUE,
     fullSlide(h2("Slide 1")),
-    fullSlide(h2("Slide 2"))
+    fullSlideImage(
+      img = paste0(
+        "https://raw.githubusercontent.com/alvarotrigo/",
+        "fullPage.js/master/examples/imgs/bg5.jpg"),
+      h2("Image background")
+    )
+  ),
+  fullSectionImage( # will not show in viewer, open in browser
+    img = paste0(
+      "https://raw.githubusercontent.com/alvarotrigo/",
+      "fullPage.js/master/examples/imgs/bg2.jpg"),
+    h1("Image background")
   )
 )
 
