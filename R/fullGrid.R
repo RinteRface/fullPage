@@ -7,7 +7,7 @@
 #' @details Wrap columns in row function, see examples.
 #'
 #' @examples
-#' it(interactive()){
+#' if(interactive()){
 #'   library(shiny)
 #'
 #'   ui <- pagePiling(
