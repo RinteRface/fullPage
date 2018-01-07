@@ -14,17 +14,21 @@
 #'   ui <- multiPage(
 #'     multiLeft(
 #'       multiSection(
+#'         align = "right",
 #'         h1("Left")
 #'       ),
 #'       multiSection(
+#'         align = "center",
 #'         h1("Left Again")
 #'       )
 #'     ),
 #'     multiRight(
 #'       multiSection(
+#'         align = "left",
 #'         h1("Right")
 #'       ),
 #'       multiSection(
+#'         align = "center",
 #'         h1("Right again")
 #'       )
 #'     )

@@ -15,8 +15,41 @@ multiRight(..., align = NULL)
 \item{align}{text alignment passed to \code{CSS}, takes \code{left}, \code{right} or \code{center}.}
 }
 \description{
-Create multi page sides.
+Create multi page sides; left and right.
 }
 \details{
 Only use one of each in \code{\link{multiPage}}.
+}
+\examples{
+if(interactive()){
+  library(shiny)
+
+  ui <- multiPage(
+    multiLeft(
+      multiSection(
+        align = "right",
+        h1("Left")
+      ),
+      multiSection(
+        align = "center",
+        h1("Left Again")
+      )
+    ),
+    multiRight(
+      multiSection(
+        align = "left",
+        h1("Right")
+      ),
+      multiSection(
+        align = "center",
+        h1("Right again")
+      )
+    )
+  )
+
+  server <- function(input, output){}
+
+  shinyApp(ui, server)
+}
+
 }
