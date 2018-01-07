@@ -20,7 +20,7 @@ pageSection(..., menu = NULL, center = FALSE)
 \item{center}{whether to center text horizontally.}
 }
 \description{
-Sections and Slides
+Add sections and slides.
 }
 \examples{
 if(interactive()){
@@ -29,20 +29,13 @@ library(shiny)
 
 ui <- fullPage(
   opts = list(
-    sectionsColor = c('#4BBFC3', '#7BAABE'),
-    parallax = TRUE
+    sectionsColor = c("#f3f3f3", "#4BBFC3")
   ),
-  fullSection(h3("First"), center = TRUE),
+  fullSection(h1("First section"), center = TRUE),
   fullSection(
     center = TRUE,
-    fullSlide(h3("Slide 1")),
-    fullSlide(h3("Slide 2"))
-  ),
-  fullSection(
-    fullParallax(
-      h1("parallax"),
-      url = "https://photos.vanityfair.com/2015/01/30/54cbf3da998d4de83ba3602f_image.jpg"
-    )
+    fullSlide(h2("Slide 1")),
+    fullSlide(h2("Slide 2"))
   )
 )
 
