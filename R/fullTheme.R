@@ -1,5 +1,7 @@
 #' Set theme
 #'
+#' Set a theme.
+#'
 #' @param theme theme, see details.
 #'
 #' @details
@@ -31,7 +33,7 @@
 #'
 #'     center = TRUE,
 #'
-#'     fullTheme("red"),
+#'     fullTheme("red"), # theme
 #'
 #'     fullSection(
 #'       center = TRUE,

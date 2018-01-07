@@ -16,7 +16,7 @@ pageTheme(theme)
 \item{theme}{theme, see details.}
 }
 \description{
-Set theme
+Set a theme.
 }
 \details{
 Valid \code{theme}:
@@ -47,7 +47,7 @@ if(interactive()){
 
     center = TRUE,
 
-    fullTheme("red"),
+    fullTheme("red"), # theme
 
     fullSection(
       center = TRUE,
