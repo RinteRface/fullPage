@@ -1,4 +1,4 @@
-#' Set page piling
+#' Setup a page.
 #'
 #' Create a pilling page.
 #'

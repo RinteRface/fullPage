@@ -2,7 +2,7 @@
 % Please edit documentation in R/pagePiling.R
 \name{pagePiling}
 \alias{pagePiling}
-\title{Set page piling}
+\title{Setup a page.}
 \usage{
 pagePiling(..., sections.color, opts = NULL, menu = NULL, center = FALSE)
 }
