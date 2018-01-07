@@ -3,7 +3,7 @@
 \name{multiPage}
 \alias{multiPage}
 \alias{multiSection}
-\title{Setup a multiscroll page}
+\title{Setup a page}
 \usage{
 multiPage(..., opts = NULL, menu = NULL)
 
@@ -19,7 +19,7 @@ multiSection(..., menu = NULL, alignment = "none")
 \item{alignment}{align text \code{left}, \code{right} or, \code{center}, defaults to \code{none}.}
 }
 \description{
-Create a multiscroll page.
+Create a full scrolling page.
 }
 \details{
 use the \code{menu} parameter on one "side" (\code{\link{multiLeft}} or \code{\link{multiRight}}) only;

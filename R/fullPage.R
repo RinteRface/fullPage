@@ -1,6 +1,6 @@
 #' Setup a page.
 #'
-#' Create a fullPage.
+#' Create a full scrolling page.
 #'
 #' @param opts a list of options, see details.
 #' @param menu named vector of menu links.

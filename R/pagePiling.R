@@ -1,6 +1,6 @@
 #' Setup a page.
 #'
-#' Create a pilling page.
+#' Create a full scrolling page.
 #'
 #' @param ... any element.
 #' @param opts list of options, see details.

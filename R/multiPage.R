@@ -1,6 +1,6 @@
-#' Setup a multiscroll page
+#' Setup a page
 #'
-#' Create a multiscroll page.
+#' Create a full scrolling page.
 #'
 #' @inheritParams fullPage
 #' @param alignment align text \code{left}, \code{right} or, \code{center}, defaults to \code{none}.

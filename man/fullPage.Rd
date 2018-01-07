@@ -16,7 +16,7 @@ fullPage(..., opts = NULL, menu = NULL, center = FALSE)
 \item{center}{horizontally center all sections.}
 }
 \description{
-Create a fullPage.
+Create a full scrolling page.
 }
 \details{
 Valid \code{opts}:

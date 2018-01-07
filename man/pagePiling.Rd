@@ -18,7 +18,7 @@ pagePiling(..., sections.color, opts = NULL, menu = NULL, center = FALSE)
 \item{center}{horizontally center all sections.}
 }
 \description{
-Create a pilling page.
+Create a full scrolling page.
 }
 \details{
 \itemize{
