@@ -333,8 +333,16 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #' @rdname fp
 #' @export
 fullSection <- function(..., menu = NULL, center = FALSE){
+
+  if(is.null(menu)){
+    id <- rand()
+  } else {
+    id <- menu
+  }
+
   div <- shiny::tags$div(
-    class = "section",
+    class = "section fullPageBinding",
+    id = id,
     ...
   )
 
@@ -344,7 +352,16 @@ fullSection <- function(..., menu = NULL, center = FALSE){
   if(isTRUE(center))
     div <- shiny::tagAppendAttributes(div, style = "text-align: center;")
 
-  div
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("bindings", "detect.js"), package = "fullPage")
+        )
+      )
+    ),
+    div
+  )
 }
 
 #' @rdname fp
