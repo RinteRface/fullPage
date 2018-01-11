@@ -235,6 +235,9 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
       ),
       shiny::tags$script(
         build_opts_fp(opts)
+      ),
+      shiny::includeScript(
+        system.file(file.path("bindings", "detect.js"), package = "fullPage")
       )
     )
   } else { # no menu
@@ -245,6 +248,9 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
       ),
       shiny::tags$script(
         build_opts_fp(opts)
+      ),
+      shiny::includeScript(
+        system.file(file.path("bindings", "detect.js"), package = "fullPage")
       )
     )
   }
@@ -337,7 +343,7 @@ fullSection <- function(..., menu = NULL, center = FALSE){
   if(is.null(menu)){
     id <- rand()
   } else {
-    id <- menu
+    id <- paste0(menu, "ShinyId")
   }
 
   div <- shiny::tags$div(
@@ -352,16 +358,7 @@ fullSection <- function(..., menu = NULL, center = FALSE){
   if(isTRUE(center))
     div <- shiny::tagAppendAttributes(div, style = "text-align: center;")
 
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("bindings", "detect.js"), package = "fullPage")
-        )
-      )
-    ),
-    div
-  )
+  div
 }
 
 #' @rdname fp
@@ -391,7 +388,7 @@ fullSectionImage <- function(..., img, menu = NULL, center = FALSE){
   if(is.null(menu)){
     id <- rand()
   } else {
-    id <- menu
+    id <- paste0(menu, "ShinyId")
   }
 
   # image css
@@ -437,7 +434,7 @@ fullSlideImage <- function(..., img, menu = NULL, center = FALSE){
   if(is.null(menu)){
     id <- rand()
   } else {
-    id <- menu
+    id <- paste0(menu, "ShinyId")
   }
 
   # image css
