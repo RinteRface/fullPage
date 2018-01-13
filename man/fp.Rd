@@ -9,7 +9,7 @@
 \alias{pageSectionImage}
 \title{Sections and Slides}
 \usage{
-fullSection(..., menu = NULL, center = FALSE)
+fullSection(..., menu = NULL, center = FALSE, class = "")
 
 fullSlide(..., menu = NULL, center = FALSE)
 
@@ -17,7 +17,7 @@ fullSectionImage(..., img, menu = NULL, center = FALSE)
 
 fullSlideImage(..., img, menu = NULL, center = FALSE)
 
-pageSection(..., menu = NULL, center = FALSE)
+pageSection(..., menu = NULL, center = FALSE, class = "")
 
 pageSectionImage(..., img, menu = NULL, center = FALSE)
 }
@@ -46,7 +46,11 @@ ui <- fullPage(
   opts = list(
     sectionsColor = c("#f3f3f3", "#4BBFC3")
   ),
-  fullSection(h1("First section"), center = TRUE),
+  fullSection(h1("First section"), center = TRUE, class = "active"),
+  fullSection(
+    menu = "caputureSections",
+    verbatimTextOutput('txt')
+  ),
   fullSection(
     fullSlide(h2("Slide 1")),
     fullSlideImage(
@@ -64,7 +68,11 @@ ui <- fullPage(
   )
 )
 
-server <- function(input, output){}
+server <- function(input, output){
+  observeEvent(caputureSectionsSection, {
+    print("Section loaded")
+  })
+}
 
 shinyApp(ui, server)
 }

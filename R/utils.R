@@ -1,7 +1,12 @@
 build_opts_fp <- function(opts = NULL){
   opts <- jsonlite::toJSON(opts, auto_unbox = T)
 
-  paste0("$(document).ready(function() {$('#fullpageshiny').fullpage(", opts, ");});")
+  paste0("
+         var options = ", opts, ";
+         $.extend(options, {'afterLoad': function(anchorLink, index){
+             $('.fullPageBinding.active').trigger('change');
+         }});
+         $(document).ready(function() {$('#fullpageshiny').fullpage(options);});")
 }
 
 build_opts_pp <- function(opts = NULL){
@@ -31,4 +36,8 @@ build_section <- function(menu = NULL, center = FALSE, class, ...){
     div <- shiny::tagAppendAttributes(div, style = "text-align: center;")
 
   div
+}
+
+rand <- function(){
+  paste0(tolower(sample(c(LETTERS, 1:9), 26 + 9)), collapse = "")
 }
