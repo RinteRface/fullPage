@@ -46,10 +46,9 @@ ui <- fullPage(
   opts = list(
     sectionsColor = c("#f3f3f3", "#4BBFC3")
   ),
-  fullSection(h1("First section"), center = TRUE, class = "active"),
+  fullSection(h1("First section"), center = TRUE),
   fullSection(
-    menu = "caputureSections",
-    verbatimTextOutput('txt')
+    menu = "captureThisSection"
   ),
   fullSection(
     fullSlide(h2("Slide 1")),
@@ -69,8 +68,8 @@ ui <- fullPage(
 )
 
 server <- function(input, output){
-  observeEvent(caputureSectionsSection, {
-    print("Section loaded")
+  observeEvent(input$captureThisSectionInput, {
+    print("Section # 2 loaded")
   })
 }
 

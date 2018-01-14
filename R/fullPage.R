@@ -311,9 +311,9 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #'   opts = list(
 #'     sectionsColor = c("#f3f3f3", "#4BBFC3")
 #'   ),
-#'   fullSection(h1("First section"), center = TRUE, class = "active"),
+#'   fullSection(h1("First section"), center = TRUE),
 #'   fullSection(
-#'     menu = "captureSections"
+#'     menu = "captureThisSection"
 #'   ),
 #'   fullSection(
 #'     fullSlide(h2("Slide 1")),
@@ -333,8 +333,8 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #' )
 #'
 #' server <- function(input, output){
-#'   observeEvent(captureSectionsSection, {
-#'     print("Section loaded")
+#'   observeEvent(input$captureThisSectionInput, {
+#'     print("Section # 2 loaded")
 #'   })
 #' }
 #'
@@ -350,11 +350,11 @@ fullSection <- function(..., menu = NULL, center = FALSE, class = ""){
   if(is.null(menu)){
     id <- rand()
   } else {
-    id <- paste0(menu, "Section")
+    id <- paste0(menu, "Input")
   }
 
   div <- shiny::tags$div(
-    class = paste(class, "section fullPageBinding"),
+    class = paste("section fullPageBinding", class),
     id = id,
     ...
   )

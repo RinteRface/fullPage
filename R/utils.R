@@ -4,7 +4,7 @@ build_opts_fp <- function(opts = NULL){
   paste0("
          var options = ", opts, ";
          $.extend(options, {'afterLoad': function(anchorLink, index){
-             $('.fullPageBinding.active').trigger('change');
+             $('.fullPageBinding.active').trigger('active');
          }});
          $(document).ready(function() {$('#fullpageshiny').fullpage(options);});")
 }
