@@ -2,7 +2,7 @@
 
 # fullPage
 
-![](http://rinterface.com/inst/images/shinybulma.svg)
+<img src="http://rinterface.com/inst/images/shinybulma.svg" width="220px"/>
 
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
