@@ -85,7 +85,8 @@ ui <- fullPage(
            "Sections" = "link2",
            "Slides" = "section3",
            "backgrounds" = "section4",
-           "Background Slides" = "section5"),
+           "Background Slides" = "section5",
+           "Callbacks" = "section6"),
   opts = options,
   fullSection(
     center = TRUE,
@@ -101,7 +102,7 @@ ui <- fullPage(
           "dd",
           "data points",
           choices = c(10, 20, 30)
-          )
+         )
         ),
         fullColumn(
           plotOutput("hist")
@@ -152,6 +153,14 @@ ui <- fullPage(
     fullSlidePlot(
       "slideSectionPlot2"
     )
+  ),
+  fullSection(
+    menu = "section6",
+    fullContainer(
+      h3("Callbacks"),
+      p("Get callbacks on slide origin, destination, derection."),
+      p("Current slide:", verbatimTextOutput("slide"))
+    )
   )
 )
 
@@ -192,6 +201,10 @@ server <- function(input, output){
   output$slideSectionPlot2 <- renderPlot({
     par(bg = "gray50")
     hist(rnorm(50, 1, 25))
+  })
+
+  output$slide <- renderPrint({
+    input$slide_origin
   })
 }
 
