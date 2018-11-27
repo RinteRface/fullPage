@@ -101,14 +101,12 @@
 #' @seealso \href{Official documentation}{https://github.com/alvarotrigo/pagePiling.js/}.
 #'
 #' @export
-pagePiling <- function(..., sections.color, opts = NULL, menu = NULL, center = FALSE){
+pagePiling <- function(..., sections.color, opts = list(), menu = NULL, center = FALSE){
 
   if(missing(sections.color))
     stop("must pass sections.color", call. = FALSE)
 
   # add anchors to JS
-  if(!inherits(opts, "list")) opts <- list()
-
   opts <- append(opts, list(sectionsColor = sections.color))
 
   # build menu

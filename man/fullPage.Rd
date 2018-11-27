@@ -4,7 +4,7 @@
 \alias{fullPage}
 \title{Setup a page.}
 \usage{
-fullPage(..., opts = NULL, menu = NULL, center = FALSE)
+fullPage(..., opts = list(), menu = NULL, center = FALSE)
 }
 \arguments{
 \item{...}{any element.}

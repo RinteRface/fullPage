@@ -122,7 +122,11 @@
 #' @seealso \href{Official documentation}{https://github.com/alvarotrigo/multiscroll.js}.
 #'
 #' @export
-multiPage <- function(..., opts = NULL, menu = NULL){
+multiPage <- function(..., opts = list(), menu = NULL){
+
+  # add menu anchors
+  opts$anchors <- unname(menu)
+  opts$menu <- "#tocMenu"
 
   # build menu
   if(!is.null(menu)){
@@ -149,13 +153,6 @@ multiPage <- function(..., opts = NULL, menu = NULL){
       # append to unordered list
       ul <- shiny::tagAppendChild(ul, li)
     }
-
-    # add anchors to JS
-    if(!inherits(opts, "list")) opts <- list()
-
-    # add menu anchors
-    opts$anchors <- unname(menu)
-    opts$menu <- "#tocMenu"
 
     # build body
     body <- shiny::tags$body(

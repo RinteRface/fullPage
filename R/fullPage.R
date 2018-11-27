@@ -204,7 +204,11 @@
 #' @seealso \href{Official documentation}{https://github.com/alvarotrigo/fullPage.js/}.
 #'
 #' @export
-fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
+fullPage <- function(..., opts = list(), menu = NULL, center = FALSE){
+
+  # add menu anchors
+  opts$anchors <- unname(menu)
+  opts$menu <- "#tocMenu"
 
   # build menu
   if(!is.null(menu)){
@@ -231,13 +235,6 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
       # append to unordered list
       ul <- shiny::tagAppendChild(ul, li)
     }
-
-    # add anchors to JS
-    if(!inherits(opts, "list")) opts <- list()
-
-    # add menu anchors
-    opts$anchors <- unname(menu)
-    opts$menu <- "#tocMenu"
 
     # build body
     body <- shiny::tags$body(

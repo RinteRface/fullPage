@@ -4,12 +4,10 @@ build_opts_fp <- function(opts = NULL){
 
   paste0("
          var options = ", opts, ";
-         console.log(options);
          $.extend(options, {'afterLoad': function(origin, destination, direction){
             Shiny.onInputChange('slide_origin', origin);
             Shiny.onInputChange('slide_destination', destination);
             Shiny.onInputChange('slide_direction', direction);
-            console.log('sss');
          }});
          $(document).ready(function() {$('#fullpageshiny').fullpage(options);});
         ")
@@ -19,13 +17,29 @@ build_opts_pp <- function(opts = NULL){
 
   opts <- jsonlite::toJSON(opts, auto_unbox = T)
 
-  paste0("$(document).ready(function() {$('#fullpagePilling').pagepiling(", opts, ")});")
+  paste0("
+         var options = ", opts, ";
+         console.log(options);
+         $.extend(options, {'afterLoad': function(anchorLink, index){
+            Shiny.onInputChange('slide_anchor', anchorLink);
+            Shiny.onInputChange('slide_index', index);
+         }});
+         $(document).ready(function() {$('#fullpagePilling').pagepiling(options)});
+        ")
 }
 
 build_opts_mp <- function(opts = NULL){
   opts <- jsonlite::toJSON(opts, auto_unbox = T)
 
-  paste0("$(document).ready(function() {$('#multiscrollshiny').multiscroll(", opts, ");});")
+  paste0("
+         var options = ", opts, ";
+         console.log(options);
+         $.extend(options, {'afterLoad': function(anchorLink, index){
+            Shiny.onInputChange('slide_anchor', anchorLink);
+            Shiny.onInputChange('slide_index', index);
+         }});
+         $(document).ready(function() {$('#multiscrollshiny').multiscroll(options);});
+        ")
 }
 
 

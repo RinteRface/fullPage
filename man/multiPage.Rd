@@ -4,7 +4,7 @@
 \alias{multiPage}
 \title{Setup a page}
 \usage{
-multiPage(..., opts = NULL, menu = NULL)
+multiPage(..., opts = list(), menu = NULL)
 }
 \arguments{
 \item{...}{any element.}
