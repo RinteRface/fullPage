@@ -1,13 +1,15 @@
 Package: fullPage
 Title: Three Families of Functions for Three Different Single Page Shiny Apps
 Version: 0.1.0
-Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+  person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre")),
+  person(family = "RinteRface", role = "cph"))
 Description: Includes functions to build three full scrolling single page websites/apps with shiny.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: shiny, jsonlite
 RoxygenNote: 6.1.1
-URL: https://github.com/JohnCoene/fullPage
-BugReports: https://github.com/JohnCoene/fullPage/issues
+URL: https://github.com/RinteRface/fullPage
+BugReports: https://github.com/RinteRface/fullPage/issues
 Suggests: testthat

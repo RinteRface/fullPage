@@ -28,6 +28,8 @@ pageSectionImage(..., img, menu = NULL, center = FALSE)
 
 \item{center}{whether to center text horizontally.}
 
+\item{class}{A CSS class.}
+
 \item{img}{path to image.}
 }
 \description{

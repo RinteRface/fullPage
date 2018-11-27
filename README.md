@@ -1,4 +1,4 @@
-[![Travis-CI Build Status](https://travis-ci.org/JohnCoene/fullPage.svg?branch=master)](https://travis-ci.org/JohnCoene/fullPage)
+[![Travis build status](https://travis-ci.org/RinteRface/fullPage.svg?branch=master)](https://travis-ci.org/RinteRface/fullPage)
 
 # fullPage
 
@@ -7,7 +7,7 @@
 Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
 * [Install](#install)
-* [Demos](http://john-coene.com/packages/fullPage/)
+* [Demos](#examples)
 * [Features](#features)
 * [Examples](#examples)
     * [fullPage](#fullPage-1)
@@ -26,7 +26,16 @@ devtools::install_github("JohnCoene/fullPage")
 * [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/) -- functions starting with `page`.
 * [multiScroll.js](https://github.com/alvarotrigo/multiscroll.js) -- functions starting with `multi`.
 
-**OR**
+## Demos
+
+Online:
+
+* [fullPage.js](https://shiny.john-coene.com/fullPage)
+* [pagePiling.js](https://shiny.john-coene.com/pagePiling)
+* [multiScroll.js](https://shiny.john-coene.com/multiScroll)
+
+
+Locally:
 
 ```r
 demo("fullPage", package = "fullPage")

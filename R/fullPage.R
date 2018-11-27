@@ -299,6 +299,7 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
 #' @param menu menu link.
 #' @param center whether to center text horizontally.
 #' @param img path to image.
+#' @param class A CSS class.
 #' @param ... any element.
 #'
 #' @examples
