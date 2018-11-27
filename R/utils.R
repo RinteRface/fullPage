@@ -1,12 +1,18 @@
 build_opts_fp <- function(opts = NULL){
+
   opts <- jsonlite::toJSON(opts, auto_unbox = T)
 
   paste0("
          var options = ", opts, ";
-         $.extend(options, {'afterLoad': function(anchorLink, index){
-             $('.fullPageBinding.active').trigger('active');
+         console.log(options);
+         $.extend(options, {'afterLoad': function(origin, destination, direction){
+            Shiny.onInputChange('slide_origin', origin);
+            Shiny.onInputChange('slide_destination', destination);
+            Shiny.onInputChange('slide_direction', direction);
+            console.log('sss');
          }});
-         $(document).ready(function() {$('#fullpageshiny').fullpage(options);});")
+         $(document).ready(function() {$('#fullpageshiny').fullpage(options);});
+        ")
 }
 
 build_opts_pp <- function(opts = NULL){

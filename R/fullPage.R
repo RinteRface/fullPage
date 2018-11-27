@@ -75,7 +75,8 @@
 #'            "Sections" = "link2",
 #'            "Slides" = "section3",
 #'            "backgrounds" = "section4",
-#'            "Background Slides" = "section5"),
+#'            "Background Slides" = "section5",
+#'            "Callbacks" = "section6"),
 #'   opts = options,
 #'   fullSection(
 #'     center = TRUE,
@@ -91,7 +92,7 @@
 #'           "dd",
 #'           "data points",
 #'           choices = c(10, 20, 30)
-#'           )
+#'          )
 #'         ),
 #'         fullColumn(
 #'           plotOutput("hist")
@@ -142,6 +143,14 @@
 #'     fullSlidePlot(
 #'       "slideSectionPlot2"
 #'     )
+#'   ),
+#'   fullSection(
+#'     menu = "section6",
+#'     fullContainer(
+#'       h3("Callbacks"),
+#'       p("Get callbacks on slide origin, destination, derection."),
+#'       p("Current slide:", verbatimTextOutput("slide"))
+#'     )
 #'   )
 #' )
 #'
@@ -182,6 +191,10 @@
 #'   output$slideSectionPlot2 <- renderPlot({
 #'     par(bg = "gray50")
 #'     hist(rnorm(50, 1, 25))
+#'   })
+#'
+#'   output$slide <- renderPrint({
+#'     input$slide_origin
 #'   })
 #' }
 #'
@@ -235,9 +248,6 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
       ),
       shiny::tags$script(
         build_opts_fp(opts)
-      ),
-      shiny::includeScript(
-        system.file(file.path("bindings", "detect.js"), package = "fullPage")
       )
     )
   } else { # no menu
@@ -248,9 +258,6 @@ fullPage <- function(..., opts = NULL, menu = NULL, center = FALSE){
       ),
       shiny::tags$script(
         build_opts_fp(opts)
-      ),
-      shiny::includeScript(
-        system.file(file.path("bindings", "detect.js"), package = "fullPage")
       )
     )
   }
