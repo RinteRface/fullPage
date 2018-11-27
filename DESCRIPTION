@@ -7,7 +7,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: shiny, jsonlite
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 URL: https://github.com/JohnCoene/fullPage
 BugReports: https://github.com/JohnCoene/fullPage/issues
 Suggests: testthat

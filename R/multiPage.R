@@ -195,10 +195,10 @@ multiPage <- function(..., opts = NULL, menu = NULL){
         system.file("css/styles.css", package = "fullPage")
       ),
       shiny::includeScript(
-        system.file("js/jquery.min.js", package = "fullPage")
+        system.file("jquery-3.2.1/jquery.min.js", package = "fullPage")
       ),
       shiny::includeScript(
-        system.file("js/jquery.easing.min.js", package = "fullPage")
+        system.file("jquery-3.2.1/jquery.easing.min.js", package = "fullPage")
       ),
       shiny::includeScript(
         system.file("js/jquery.multiscroll.min.js", package = "fullPage")

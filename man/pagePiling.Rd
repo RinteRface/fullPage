@@ -4,7 +4,8 @@
 \alias{pagePiling}
 \title{Setup a page.}
 \usage{
-pagePiling(..., sections.color, opts = NULL, menu = NULL, center = FALSE)
+pagePiling(..., sections.color, opts = NULL, menu = NULL,
+  center = FALSE)
 }
 \arguments{
 \item{...}{any element.}
