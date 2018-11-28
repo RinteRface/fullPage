@@ -1,10 +1,7 @@
+# fullPage <img src="http://rinterface.com/inst/images/fullPage.svg" width="200px" align="right"/>
 [![Travis build status](https://travis-ci.org/RinteRface/fullPage.svg?branch=master)](https://travis-ci.org/RinteRface/fullPage)
 
-# fullPage
-
-<img src="http://rinterface.com/inst/images/shinybulma.svg" width="220px"/>
-
-Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
+> Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
 * [Install](#install)
 * [Demos](#examples)
@@ -21,7 +18,7 @@ Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("JohnCoene/fullPage")
+remotes::install_github("RinteRface/fullPage")
 ```
 
 ## Features
@@ -65,6 +62,9 @@ demo("multiPage", package = "fullPage")
 - `input$slide_index`: slide index
 
 ```r
+library(shiny)
+library(fullPage)
+
 ui <- fullPage(
   fullSection(
     menu = "first",
