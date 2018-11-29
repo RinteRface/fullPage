@@ -62,6 +62,12 @@
   </a>
 </li>
 <li>
+  <a href="reference/">
+    <span class="fa fa-code"></span>
+     
+  </a>
+</li>
+<li>
   <a href="articles/fullPage.html">fullPage</a>
 </li>
 <li>
@@ -73,11 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="reference/">
-    <span class="fa fa-code"></span>
-     
-    Reference
-  </a>
+  <a href="articles/callbacks.html">Callbacks</a>
 </li>
 <li>
   <a href="https://github.com/RinteRface/fullPage">
@@ -104,23 +106,17 @@
 <blockquote>
 <p>Many of the amazing works of <a href="https://alvarotrigo.com/">Álvaro Trigo</a> for Shiny!</p>
 </blockquote>
-<ul>
-<li><a href="#install">Install</a></li>
-<li><a href="#examples">Demos</a></li>
-<li><a href="#features">Features</a></li>
-<li>
-<a href="#examples">Examples</a>
-<ul>
-<li><a href="#fullPage-1">fullPage</a></li>
-<li><a href="#pagePiling">pagePiling</a></li>
-<li><a href="#multiScroll">multiScroll</a></li>
-</ul>
-</li>
-<li><a href="#callbacks">Callbacks</a></li>
-</ul>
+<p>
+<a href="https://shiny.john-coene.com/fullPage" target="_blank" class="btn btn-default">fullPage demo</a>
+<a href="https://shiny.john-coene.com/pagePiling" target="_blank" class="btn btn-warning">pagePiling demo</a>
+<a href="https://shiny.john-coene.com/multiScroll" target="_blank" class="btn btn-success">multiScroll demo</a>
+</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<p>Install the <em>stable</em> version from CRAN:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"fullPage"</span>)</code></pre></div>
+<p>Install the <em>dev</em> version from <a href="https://github.com/RinteRface/fullPage">Github</a> with:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("remotes")</span>
 remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"RinteRface/fullPage"</span>)</code></pre></div>
 </div>
@@ -135,72 +131,12 @@ remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocument
 <li>
 <a href="https://github.com/alvarotrigo/multiscroll.js">multiScroll.js</a> – functions starting with <code>multi</code>.</li>
 </ul>
-<p>All ship with:</p>
+<p>All ships with:</p>
 <ul>
 <li>
 <a href="https://milligram.io/">Milligram</a> <em>grid, button, typography, and themes.</em>
 </li>
 </ul>
-</div>
-<div id="demos" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demos" class="anchor"></a>Demos</h2>
-<p>Online:</p>
-<ul>
-<li><a href="https://shiny.john-coene.com/fullPage">fullPage.js</a></li>
-<li><a href="https://shiny.john-coene.com/pagePiling">pagePiling.js</a></li>
-<li><a href="https://shiny.john-coene.com/multiScroll">multiScroll.js</a></li>
-</ul>
-<p>Locally:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/demo">demo</a></span>(<span class="st">"fullPage"</span>, <span class="dt">package =</span> <span class="st">"fullPage"</span>)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/demo">demo</a></span>(<span class="st">"pagePiling"</span>, <span class="dt">package =</span> <span class="st">"fullPage"</span>)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/demo">demo</a></span>(<span class="st">"multiPage"</span>, <span class="dt">package =</span> <span class="st">"fullPage"</span>)</code></pre></div>
-</div>
-<div id="callbacks" class="section level2">
-<h2 class="hasAnchor">
-<a href="#callbacks" class="anchor"></a>Callbacks</h2>
-<p><strong>fullPage</strong></p>
-<ul>
-<li>
-<code>input$slide_origin</code>: origin slide</li>
-<li>
-<code>input$slide_destination</code>: destination slide</li>
-<li>
-<code>input$slide_direction</code>: scroll direction</li>
-</ul>
-<p><strong>pagePiling &amp; multiScroll</strong></p>
-<ul>
-<li>
-<code>input$slide_anchor</code>: slide anchor</li>
-<li>
-<code>input$slide_index</code>: slide index</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(shiny)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fullPage)
-
-ui &lt;-<span class="st"> </span><span class="kw"><a href="reference/fullPage.html">fullPage</a></span>(
-  <span class="kw"><a href="reference/fp.html">fullSection</a></span>(
-    <span class="dt">menu =</span> <span class="st">"first"</span>,
-    <span class="dt">center =</span> <span class="ot">TRUE</span>,
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"Callbacks"</span>)
-  ),
-  <span class="kw"><a href="reference/fp.html">fullSection</a></span>(
-    <span class="dt">menu =</span> <span class="st">"second"</span>,
-    <span class="dt">center =</span> <span class="ot">TRUE</span>,
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h3</a></span>(<span class="st">"Slice"</span>),
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/verbatimTextOutput">verbatimTextOutput</a></span>(<span class="st">"slide"</span>)
-  )
-)
-
-server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output){
-  
-  output<span class="op">$</span>slide &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/renderPrint">renderPrint</a></span>({
-    input<span class="op">$</span>slide_origin <span class="co"># returns menu</span>
-  })
-  
-}
-
-<span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/shinyApp">shinyApp</a></span>(ui, server)</code></pre></div>
 </div>
 </div>
   </div>
@@ -226,7 +162,8 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>John Coene <br><small class="roles"> Author, maintainer </small>  </li>
+<li>
+<a href="http://john-coene.com">John Coene</a> <br><small class="roles"> Author, maintainer </small>  </li>
 <li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
@@ -235,6 +172,7 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/RinteRface/fullPage"><img src="https://travis-ci.org/RinteRface/fullPage.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://cran.r-project.org/package=fullPage"><img src="https://www.r-pkg.org/badges/version/fullPage" alt="CRAN status"></a></li>
 </ul>
 </div>
 </div>
@@ -242,7 +180,7 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 
 
       <footer><div class="copyright">
-  <p>Developed by John Coene.</p>
+  <p>Developed by <a href="http://john-coene.com">John Coene</a>.</p>
 </div>
 
 <div class="pkgdown">

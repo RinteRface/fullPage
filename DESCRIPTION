@@ -15,5 +15,6 @@ BugReports: https://github.com/RinteRface/fullPage/issues
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    htmltools
 VignetteBuilder: knitr

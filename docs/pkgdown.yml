@@ -1,5 +1,9 @@
 pandoc: 1.19.2.4
 pkgdown: 1.2.0.9000
 pkgdown_sha: c980e84a573614087c6e151d5e6e19a22748b761
-articles: []
+articles:
+  callbacks: callbacks.html
+  fullPage: fullPage.html
+  multiScroll: multiScroll.html
+  pagePiling: pagePiling.html
 

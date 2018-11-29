@@ -3,7 +3,32 @@
 
 > Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
-* [Callbacks](#callbacks)
+```{r setup, include=FALSE}
+library(htmltools)
+```
+
+```{r, echo=FALSE}
+p(
+  tags$a(
+    href = "https://shiny.john-coene.com/fullPage",
+    target = "_blank",
+    class = "btn btn-default",
+    "fullPage demo"
+  ),
+  tags$a(
+    href = "https://shiny.john-coene.com/pagePiling",
+    target = "_blank",
+    class = "btn btn-warning",
+    "pagePiling demo"
+  ),
+  tags$a(
+    href = "https://shiny.john-coene.com/multiScroll",
+    target = "_blank",
+    class = "btn btn-success",
+    "multiScroll demo"
+  )
+)
+```
 
 ## Installation
 
