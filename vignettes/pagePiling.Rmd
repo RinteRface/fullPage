@@ -1,0 +1,88 @@
+---
+title: "pagePiling"
+author: "John Coene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{pagePiling}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+You can run a local demo of fullPage with `demo("pagePiling", package = "fullPage")`.
+
+`fullPage` consists of section (`pageSection`), all the functions of relevant to pagePiling start in `page_`.Always initialise the page with `pagePiling`.
+
+The code looks like:
+
+```r
+library(shiny)
+library(fullPage)
+
+options <- list(
+  loopBottom = TRUE
+)
+
+ui <- pagePiling(
+  sections.color = c('#f2f2f2', '#2C3E50', '#39C'),
+  opts = options,
+  menu = c("Section 1" = "section1",
+           "Piling" = "section2",
+           "Plots" = "section3",
+           "Layers" = "section4"),
+  pageSection(
+    center = TRUE,
+    menu = "section1",
+    h1("Page piling")
+  ),
+  pageSection(
+    menu = "section2",
+    center = TRUE,
+    h1("Section 2")
+  ),
+  pageSectionPlot(
+    "plot",
+    center = TRUE,
+    menu = "section3",
+    h1("Plot background")
+  ),
+  pageSectionPlot(
+    "plot2",
+    center = TRUE,
+    menu = "section4",
+    pageContainer(
+      h1("Layer anything"),
+      sliderInput(
+        "bins",
+        "Data Points",
+        min = 100,
+        max = 500,
+        step = 25,
+        value = 200
+      )
+    )
+  )
+)
+
+server <- function(input, output){
+
+  output$plot <- renderPlot({
+    par(bg = "grey60")
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$plot2 <- renderPlot({
+    par(bg = "grey80")
+    hist(rnorm(input$bins, 100, 250))
+  })
+}
+
+shinyApp(ui, server)
+```

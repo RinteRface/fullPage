@@ -1,0 +1,26 @@
+template:
+  params:
+    bootswatch: united
+
+navbar:
+  title: "fullPage"
+  left:
+    - icon: fa-home
+      href: index.html
+    - icon: fa-balance-scale
+      href: LICENSE.html
+    - icon: fa-newspaper-o
+      href: news/index.html
+    - icon: fa-code
+      href: "reference/"
+    - text: "fullPage" 
+      href: articles/fullPage.html
+    - text: "pagePiling" 
+      href: articles/pagePiling.html
+    - text: "multiScroll" 
+      href: articles/multiScroll.html
+  right:
+    - text: Callbacks
+      href: "articles/callbacks.html"
+    - icon: fa-github fa-lg
+      href: https://github.com/RinteRface/fullPage

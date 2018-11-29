@@ -12,4 +12,8 @@ Imports: shiny, jsonlite
 RoxygenNote: 6.1.1
 URL: https://github.com/RinteRface/fullPage
 BugReports: https://github.com/RinteRface/fullPage/issues
-Suggests: testthat
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

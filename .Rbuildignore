@@ -6,3 +6,4 @@
 ^cran-comments\.md$
 ^revdep$
 ^fullPage\.gif$
+pkgdown

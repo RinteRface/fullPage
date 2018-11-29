@@ -1,0 +1,61 @@
+---
+title: "Callbacks"
+author: "John Coene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Callbacks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Callbacks let you pick up on events, i.e.: which slide is currently being viewed. For instance, it comes in handy to display animations at the right moment! Below are the callbacks available to each family of functions:
+
+**fullPage**
+
+- `input$slide_origin`: origin slide
+- `input$slide_destination`: destination slide
+- `input$slide_direction`: scroll direction
+
+**pagePiling & multiScroll**
+
+- `input$slide_anchor`: slide anchor
+- `input$slide_index`: slide index
+
+Demo:
+
+```r
+library(shiny)
+library(fullPage)
+
+ui <- fullPage(
+  fullSection(
+    menu = "first",
+    center = TRUE,
+    h1("Callbacks")
+  ),
+  fullSection(
+    menu = "second",
+    center = TRUE,
+    h3("Slice"),
+    verbatimTextOutput("slide")
+  )
+)
+
+server <- function(input, output){
+  
+  output$slide <- renderPrint({
+    input$slide_origin # returns menu
+  })
+  
+}
+
+shinyApp(ui, server)
+```

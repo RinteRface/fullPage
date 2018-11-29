@@ -1,0 +1,100 @@
+---
+title: "multiScroll"
+author: "John Coene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{multiScroll}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+You can run a local demo of fullPage with `demo("multiScroll", package = "fullPage")`.
+
+`multiScroll` consists of section (`multiSection`), which consists of two "sides", right (`multiRight`) and left `multiLeft`, all the functions of relevant to multiScroll start in `multi_`. Always initialise the page with `multiPage`.
+
+The code looks like:
+
+```r
+library(shiny)
+library(fullPage)
+
+options <- list(
+  sectionsColor = c("#4BBFC3", "#7BAABE", "lightgray")
+)
+
+ui <- multiPage(
+  opts = options,
+  menu = c("Multi Scroll" = "multiscroll",
+           "Plots" = "plots",
+           "Full Section plots" = "fullplots"),
+  multiLeft(
+    multiSection(
+      center = TRUE,
+      menu = "multiscroll",
+      h1("Multiple")
+    ),
+    multiSection(
+      menu = "plots",
+      multiContainer(
+        h1("Plot ->"),
+        numericInput(
+          "max",
+          "Maximum",
+          min = 50,
+          max = 250,
+          value = 10
+        )
+      )
+    ),
+    multiSectionPlot(
+      menu = "fullplots",
+      "fullPlot"
+    )
+  ),
+  multiRight(
+    multiSection(
+      center = TRUE,
+      h1("scroll")
+    ),
+    multiSection(
+      center = TRUE,
+      plotOutput("plot")
+    ),
+    multiSection(
+      multiContainer(
+        center = TRUE,
+        h1("<- Full Section plot"),
+        sliderInput(
+          "number",
+          "Data points",
+          min = 50,
+          max = 250,
+          value = 10
+        )
+      )
+    )
+  )
+)
+
+server <- function(input, output){
+
+  output$plot <- renderPlot({
+    hist(rnorm(100, 20, input$max))
+  })
+
+  output$fullPlot <- renderPlot({
+    par(bg = "gray")
+    hist(rnorm(input$number, 20, 250))
+  })
+}
+
+shinyApp(ui, server)
+```
