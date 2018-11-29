@@ -24,3 +24,9 @@ navbar:
       href: "articles/callbacks.html"
     - icon: fa-github fa-lg
       href: https://github.com/RinteRface/fullPage
+
+authors:
+  John Coene:
+    href: http://john-coene.com
+  RinteRFace:
+    href: http://rinterface.com
