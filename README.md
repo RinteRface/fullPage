@@ -1,5 +1,5 @@
 # fullPage <img src="http://rinterface.com/inst/images/fullPage.svg" width="200px" align="right"/>
-[![Travis build status](https://travis-ci.org/RinteRface/fullPage.svg?branch=master)](https://travis-ci.org/RinteRface/fullPage)
+[![Travis build status](https://travis-ci.org/RinteRface/fullPage.svg?branch=master)](https://travis-ci.org/RinteRface/fullPage) [![CRAN status](https://www.r-pkg.org/badges/version/fullPage)](https://cran.r-project.org/package=fullPage)
 
 > Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
@@ -27,7 +27,7 @@ remotes::install_github("RinteRface/fullPage")
 * [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/) -- functions starting with `page`.
 * [multiScroll.js](https://github.com/alvarotrigo/multiscroll.js) -- functions starting with `multi`.
 
-All ship with:
+All ships with:
 
 * [Milligram](https://milligram.io/) *grid, button, typography, and themes.*
 
