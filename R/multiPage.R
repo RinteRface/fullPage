@@ -118,6 +118,7 @@
 #'
 #' shinyApp(ui, server)
 #' }
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #'
 #' @seealso \href{Official documentation}{https://github.com/alvarotrigo/multiscroll.js}.
 #'

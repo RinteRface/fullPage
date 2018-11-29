@@ -76,5 +76,7 @@ server <- function(input, output){
 
 shinyApp(ui, server)
 }
-
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

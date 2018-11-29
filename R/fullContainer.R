@@ -2,6 +2,8 @@
 #'
 #' Add a container.
 #'
+#' @param ... any element.
+#'
 #' @details Pass within your grid, sections or slides.
 #'
 #' @examples
@@ -43,7 +45,7 @@
 #'   shinyApp(ui, server)
 #' }
 #'
-#' @param ... any element.
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #'
 #' @rdname container
 #' @export

@@ -210,8 +210,10 @@ server <- function(input, output){
 
 shinyApp(ui, server)
 }
-
 }
 \seealso{
 \href{Official documentation}{https://github.com/alvarotrigo/fullPage.js/}.
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

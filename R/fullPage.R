@@ -200,6 +200,7 @@
 #'
 #' shinyApp(ui, server)
 #' }
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #'
 #' @seealso \href{Official documentation}{https://github.com/alvarotrigo/fullPage.js/}.
 #'
@@ -346,6 +347,7 @@ fullPage <- function(..., opts = list(), menu = NULL, center = FALSE){
 #' shinyApp(ui, server)
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @details \code{fullSectionImage} and \code{fullSlideImage} do not work in RStudio viewer, open in browser.
 #'
 #' @rdname fp

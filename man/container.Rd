@@ -61,3 +61,6 @@ if(interactive()){
 }
 
 }
+\author{
+John Coene, \email{jcoenep@gmail.com}
+}
