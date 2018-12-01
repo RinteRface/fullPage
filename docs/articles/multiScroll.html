@@ -102,7 +102,7 @@
       <h1>multiScroll</h1>
                         <h4 class="author">John Coene</h4>
             
-            <h4 class="date">2018-11-29</h4>
+            <h4 class="date">2018-12-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/RinteRface/fullPage/blob/master/vignettes/multiScroll.Rmd"><code>vignettes/multiScroll.Rmd</code></a></small>
       <div class="hidden name"><code>multiScroll.Rmd</code></div>
@@ -114,80 +114,80 @@
 <p>You can run a local demo of fullPage with <code><a href="https://www.rdocumentation.org/packages/utils/topics/demo">demo("multiScroll", package = "fullPage")</a></code>.</p>
 <p><code>multiScroll</code> consists of section (<code>multiSection</code>), which consists of two “sides”, right (<code>multiRight</code>) and left <code>multiLeft</code>, all the functions of relevant to multiScroll start in <code>multi_</code>. Always initialise the page with <code>multiPage</code>.</p>
 <p>The code looks like:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(shiny)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fullPage)
-
-options &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(
-  <span class="dt">sectionsColor =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"#4BBFC3"</span>, <span class="st">"#7BAABE"</span>, <span class="st">"lightgray"</span>)
-)
-
-ui &lt;-<span class="st"> </span><span class="kw"><a href="../reference/multiPage.html">multiPage</a></span>(
-  <span class="dt">opts =</span> options,
-  <span class="dt">menu =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Multi Scroll"</span> =<span class="st"> "multiscroll"</span>,
-           <span class="st">"Plots"</span> =<span class="st"> "plots"</span>,
-           <span class="st">"Full Section plots"</span> =<span class="st"> "fullplots"</span>),
-  <span class="kw"><a href="../reference/sides.html">multiLeft</a></span>(
-    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(
-      <span class="dt">center =</span> <span class="ot">TRUE</span>,
-      <span class="dt">menu =</span> <span class="st">"multiscroll"</span>,
-      <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"Multiple"</span>)
-    ),
-    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(
-      <span class="dt">menu =</span> <span class="st">"plots"</span>,
-      <span class="kw"><a href="../reference/container.html">multiContainer</a></span>(
-        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"Plot -&gt;"</span>),
-        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/numericInput">numericInput</a></span>(
-          <span class="st">"max"</span>,
-          <span class="st">"Maximum"</span>,
-          <span class="dt">min =</span> <span class="dv">50</span>,
-          <span class="dt">max =</span> <span class="dv">250</span>,
-          <span class="dt">value =</span> <span class="dv">10</span>
-        )
-      )
-    ),
-    <span class="kw"><a href="../reference/fullPlot.html">multiSectionPlot</a></span>(
-      <span class="dt">menu =</span> <span class="st">"fullplots"</span>,
-      <span class="st">"fullPlot"</span>
-    )
-  ),
-  <span class="kw"><a href="../reference/sides.html">multiRight</a></span>(
-    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(
-      <span class="dt">center =</span> <span class="ot">TRUE</span>,
-      <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"scroll"</span>)
-    ),
-    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(
-      <span class="dt">center =</span> <span class="ot">TRUE</span>,
-      <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/plotOutput">plotOutput</a></span>(<span class="st">"plot"</span>)
-    ),
-    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(
-      <span class="kw"><a href="../reference/container.html">multiContainer</a></span>(
-        <span class="dt">center =</span> <span class="ot">TRUE</span>,
-        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"&lt;- Full Section plot"</span>),
-        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/sliderInput">sliderInput</a></span>(
-          <span class="st">"number"</span>,
-          <span class="st">"Data points"</span>,
-          <span class="dt">min =</span> <span class="dv">50</span>,
-          <span class="dt">max =</span> <span class="dv">250</span>,
-          <span class="dt">value =</span> <span class="dv">10</span>
-        )
-      )
-    )
-  )
-)
-
-server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output){
-
-  output<span class="op">$</span>plot &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/renderPlot">renderPlot</a></span>({
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/hist">hist</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(<span class="dv">100</span>, <span class="dv">20</span>, input<span class="op">$</span>max))
-  })
-
-  output<span class="op">$</span>fullPlot &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/renderPlot">renderPlot</a></span>({
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/par">par</a></span>(<span class="dt">bg =</span> <span class="st">"gray"</span>)
-    <span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/hist">hist</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(input<span class="op">$</span>number, <span class="dv">20</span>, <span class="dv">250</span>))
-  })
-}
-
-<span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/shinyApp">shinyApp</a></span>(ui, server)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(shiny)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fullPage)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">options &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="dt">sectionsColor =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"#4BBFC3"</span>, <span class="st">"#7BAABE"</span>, <span class="st">"lightgray"</span>)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">ui &lt;-<span class="st"> </span><span class="kw"><a href="../reference/multiPage.html">multiPage</a></span>(</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">  <span class="dt">opts =</span> options,</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">  <span class="dt">menu =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Multi Scroll"</span> =<span class="st"> "multiscroll"</span>,</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">           <span class="st">"Plots"</span> =<span class="st"> "plots"</span>,</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">           <span class="st">"Full Section plots"</span> =<span class="st"> "fullplots"</span>),</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">  <span class="kw"><a href="../reference/sides.html">multiLeft</a></span>(</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">      <span class="dt">center =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1-16" data-line-number="16">      <span class="dt">menu =</span> <span class="st">"multiscroll"</span>,</a>
+<a class="sourceLine" id="cb1-17" data-line-number="17">      <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"Multiple"</span>)</a>
+<a class="sourceLine" id="cb1-18" data-line-number="18">    ),</a>
+<a class="sourceLine" id="cb1-19" data-line-number="19">    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(</a>
+<a class="sourceLine" id="cb1-20" data-line-number="20">      <span class="dt">menu =</span> <span class="st">"plots"</span>,</a>
+<a class="sourceLine" id="cb1-21" data-line-number="21">      <span class="kw"><a href="../reference/container.html">multiContainer</a></span>(</a>
+<a class="sourceLine" id="cb1-22" data-line-number="22">        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"Plot -&gt;"</span>),</a>
+<a class="sourceLine" id="cb1-23" data-line-number="23">        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/numericInput">numericInput</a></span>(</a>
+<a class="sourceLine" id="cb1-24" data-line-number="24">          <span class="st">"max"</span>,</a>
+<a class="sourceLine" id="cb1-25" data-line-number="25">          <span class="st">"Maximum"</span>,</a>
+<a class="sourceLine" id="cb1-26" data-line-number="26">          <span class="dt">min =</span> <span class="dv">50</span>,</a>
+<a class="sourceLine" id="cb1-27" data-line-number="27">          <span class="dt">max =</span> <span class="dv">250</span>,</a>
+<a class="sourceLine" id="cb1-28" data-line-number="28">          <span class="dt">value =</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb1-29" data-line-number="29">        )</a>
+<a class="sourceLine" id="cb1-30" data-line-number="30">      )</a>
+<a class="sourceLine" id="cb1-31" data-line-number="31">    ),</a>
+<a class="sourceLine" id="cb1-32" data-line-number="32">    <span class="kw"><a href="../reference/fullPlot.html">multiSectionPlot</a></span>(</a>
+<a class="sourceLine" id="cb1-33" data-line-number="33">      <span class="dt">menu =</span> <span class="st">"fullplots"</span>,</a>
+<a class="sourceLine" id="cb1-34" data-line-number="34">      <span class="st">"fullPlot"</span></a>
+<a class="sourceLine" id="cb1-35" data-line-number="35">    )</a>
+<a class="sourceLine" id="cb1-36" data-line-number="36">  ),</a>
+<a class="sourceLine" id="cb1-37" data-line-number="37">  <span class="kw"><a href="../reference/sides.html">multiRight</a></span>(</a>
+<a class="sourceLine" id="cb1-38" data-line-number="38">    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(</a>
+<a class="sourceLine" id="cb1-39" data-line-number="39">      <span class="dt">center =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1-40" data-line-number="40">      <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"scroll"</span>)</a>
+<a class="sourceLine" id="cb1-41" data-line-number="41">    ),</a>
+<a class="sourceLine" id="cb1-42" data-line-number="42">    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(</a>
+<a class="sourceLine" id="cb1-43" data-line-number="43">      <span class="dt">center =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1-44" data-line-number="44">      <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/plotOutput">plotOutput</a></span>(<span class="st">"plot"</span>)</a>
+<a class="sourceLine" id="cb1-45" data-line-number="45">    ),</a>
+<a class="sourceLine" id="cb1-46" data-line-number="46">    <span class="kw"><a href="../reference/mp.html">multiSection</a></span>(</a>
+<a class="sourceLine" id="cb1-47" data-line-number="47">      <span class="kw"><a href="../reference/container.html">multiContainer</a></span>(</a>
+<a class="sourceLine" id="cb1-48" data-line-number="48">        <span class="dt">center =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1-49" data-line-number="49">        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h1</a></span>(<span class="st">"&lt;- Full Section plot"</span>),</a>
+<a class="sourceLine" id="cb1-50" data-line-number="50">        <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/sliderInput">sliderInput</a></span>(</a>
+<a class="sourceLine" id="cb1-51" data-line-number="51">          <span class="st">"number"</span>,</a>
+<a class="sourceLine" id="cb1-52" data-line-number="52">          <span class="st">"Data points"</span>,</a>
+<a class="sourceLine" id="cb1-53" data-line-number="53">          <span class="dt">min =</span> <span class="dv">50</span>,</a>
+<a class="sourceLine" id="cb1-54" data-line-number="54">          <span class="dt">max =</span> <span class="dv">250</span>,</a>
+<a class="sourceLine" id="cb1-55" data-line-number="55">          <span class="dt">value =</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb1-56" data-line-number="56">        )</a>
+<a class="sourceLine" id="cb1-57" data-line-number="57">      )</a>
+<a class="sourceLine" id="cb1-58" data-line-number="58">    )</a>
+<a class="sourceLine" id="cb1-59" data-line-number="59">  )</a>
+<a class="sourceLine" id="cb1-60" data-line-number="60">)</a>
+<a class="sourceLine" id="cb1-61" data-line-number="61"></a>
+<a class="sourceLine" id="cb1-62" data-line-number="62">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output){</a>
+<a class="sourceLine" id="cb1-63" data-line-number="63"></a>
+<a class="sourceLine" id="cb1-64" data-line-number="64">  output<span class="op">$</span>plot &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/renderPlot">renderPlot</a></span>({</a>
+<a class="sourceLine" id="cb1-65" data-line-number="65">    <span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/hist">hist</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(<span class="dv">100</span>, <span class="dv">20</span>, input<span class="op">$</span>max))</a>
+<a class="sourceLine" id="cb1-66" data-line-number="66">  })</a>
+<a class="sourceLine" id="cb1-67" data-line-number="67"></a>
+<a class="sourceLine" id="cb1-68" data-line-number="68">  output<span class="op">$</span>fullPlot &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/renderPlot">renderPlot</a></span>({</a>
+<a class="sourceLine" id="cb1-69" data-line-number="69">    <span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/par">par</a></span>(<span class="dt">bg =</span> <span class="st">"gray"</span>)</a>
+<a class="sourceLine" id="cb1-70" data-line-number="70">    <span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/hist">hist</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(input<span class="op">$</span>number, <span class="dv">20</span>, <span class="dv">250</span>))</a>
+<a class="sourceLine" id="cb1-71" data-line-number="71">  })</a>
+<a class="sourceLine" id="cb1-72" data-line-number="72">}</a>
+<a class="sourceLine" id="cb1-73" data-line-number="73"></a>
+<a class="sourceLine" id="cb1-74" data-line-number="74"><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/shinyApp">shinyApp</a></span>(ui, server)</a></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
