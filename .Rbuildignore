@@ -7,3 +7,5 @@
 ^revdep$
 ^fullPage\.gif$
 pkgdown
+docs
+index.Rmd
