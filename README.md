@@ -3,14 +3,11 @@
 
 > Many of the amazing works of [Álvaro Trigo](https://alvarotrigo.com/) for Shiny!
 
-* [Install](#install)
-* [Demos](#examples)
+* [Install](#installation)
+* [Demos](#demos)
 * [Features](#features)
 * [Website](http://fullpage.rinterface.com/)
 * [Examples](#demos)
-    * [fullPage](#fullPage-1)
-    * [pagePiling](#pagePiling)
-    * [multiScroll](#multiScroll)
 * [Callbacks](#callbacks)
 
 ![FullPage](fullPage.gif)
@@ -23,6 +20,8 @@ remotes::install_github("RinteRface/fullPage")
 ```
 
 ## Features
+
+Includes the following frameworks:
 
 * [fullPage.js](https://github.com/alvarotrigo/fullPage.js/) -- functions starting with `full`.
 * [pagePiling.js](https://github.com/alvarotrigo/pagePiling.js/) -- functions starting with `page`.
