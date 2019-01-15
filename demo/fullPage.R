@@ -1,5 +1,5 @@
-library(fullPage)
 library(shiny)
+library(fullPage)
 
 options <- list(
   sectionsColor = c(

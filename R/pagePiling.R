@@ -144,14 +144,14 @@ pagePiling <- function(..., sections.color, opts = list(), menu = NULL, center =
     body <- shiny::tags$body(
       ul,
       shiny::tags$div(
-        id = "fullpagePilling",
+        id = "fp",
         ...
       )
     )
   } else { # no menu
     body <- shiny::tags$body(
       shiny::tags$div(
-        id = "fullpagePilling",
+        id = "fp",
         ...
       )
     )

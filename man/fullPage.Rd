@@ -7,18 +7,8 @@
 fullPage(..., opts = list(), menu = NULL, center = FALSE)
 }
 \arguments{
-\item{...}{any element.}
+\item{...}{any element.
 
-\item{opts}{a list of options, see details.}
-
-\item{menu}{named vector of menu links.}
-
-\item{center}{horizontally center all sections.}
-}
-\description{
-Create a full scrolling page.
-}
-\details{
 Valid \code{opts}:
 \itemize{
   \item{\code{lockAnchors} - boolean - whether anchors in the URL will have any effect at all in the library.}
@@ -65,7 +55,16 @@ Valid \code{opts}:
   \item{\code{parallax} - defines whether or not to use the parallax backgrounds effects on sections / slides.}
   \item{\code{parallaxOptions} - list - allows to configure the parameters for the parallax backgrounds effect, see \href{parallax options}{https://github.com/alvarotrigo/fullPage.js/wiki/Extension---Parallax}}
   \item{\code{lazyLoading} -lazy loading is active by default which means it will lazy load any media element containing the attribute data-src.}
+}}
+
+\item{opts}{a list of options, see details.}
+
+\item{menu}{named vector of menu links.}
+
+\item{center}{horizontally center all sections.}
 }
+\description{
+Create a full scrolling page.
 }
 \examples{
 \dontrun{

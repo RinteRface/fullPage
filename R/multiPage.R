@@ -159,7 +159,7 @@ multiPage <- function(..., opts = list(), menu = NULL){
     body <- shiny::tags$body(
       ul,
       shiny::tags$div(
-        id = "multiscrollshiny",
+        id = "fp",
         ...
       ),
       shiny::tags$script(
@@ -169,7 +169,7 @@ multiPage <- function(..., opts = list(), menu = NULL){
   } else { # no menu
     body <- shiny::tags$body(
       shiny::tags$div(
-        id = "multiscrollshiny",
+        id = "fp",
         ...
       ),
       shiny::tags$script(

@@ -7,8 +7,6 @@
 #' @param center horizontally center all sections.
 #' @param ... any element.
 #'
-#'
-#' @details
 #' Valid \code{opts}:
 #' \itemize{
 #'   \item{\code{lockAnchors} - boolean - whether anchors in the URL will have any effect at all in the library.}
@@ -241,7 +239,7 @@ fullPage <- function(..., opts = list(), menu = NULL, center = FALSE){
     body <- shiny::tags$body(
       ul,
       shiny::tags$div(
-        id = "fullpageshiny",
+        id = "fp",
         ...
       ),
       shiny::tags$script(
@@ -251,7 +249,7 @@ fullPage <- function(..., opts = list(), menu = NULL, center = FALSE){
   } else { # no menu
     body <- shiny::tags$body(
       shiny::tags$div(
-        id = "fullpageshiny",
+        id = "fp",
         ...
       ),
       shiny::tags$script(

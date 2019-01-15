@@ -9,7 +9,7 @@ build_opts_fp <- function(opts = NULL){
             Shiny.onInputChange('slide_destination', destination);
             Shiny.onInputChange('slide_direction', direction);
          }});
-         $(document).ready(function() {$('#fullpageshiny').fullpage(options);});
+         $(document).ready(function() {$('#fp').fullpage(options);});
         ")
 }
 
@@ -24,7 +24,7 @@ build_opts_pp <- function(opts = NULL){
             Shiny.onInputChange('slide_anchor', anchorLink);
             Shiny.onInputChange('slide_index', index);
          }});
-         $(document).ready(function() {$('#fullpagePilling').pagepiling(options)});
+         $(document).ready(function() {$('#fp').pagepiling(options)});
         ")
 }
 
@@ -38,7 +38,7 @@ build_opts_mp <- function(opts = NULL){
             Shiny.onInputChange('slide_anchor', anchorLink);
             Shiny.onInputChange('slide_index', index);
          }});
-         $(document).ready(function() {$('#multiscrollshiny').multiscroll(options);});
+         $(document).ready(function() {$('#fp').multiscroll(options);});
         ")
 }
 
