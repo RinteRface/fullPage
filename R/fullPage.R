@@ -7,6 +7,7 @@
 #' @param center horizontally center all sections.
 #' @param ... any element.
 #'
+#' @details
 #' Valid \code{opts}:
 #' \itemize{
 #'   \item{\code{lockAnchors} - boolean - whether anchors in the URL will have any effect at all in the library.}

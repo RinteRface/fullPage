@@ -44,7 +44,7 @@ ui <- fullPage(
   fullSection(
     menu = "second",
     center = TRUE,
-    h3("Slice"),
+    h3("Slide"),
     verbatimTextOutput("slide")
   )
 )
@@ -52,7 +52,7 @@ ui <- fullPage(
 server <- function(input, output){
   
   output$slide <- renderPrint({
-    input$slide_origin # returns menu
+    input$fp_origin # returns menu
   })
   
 }

@@ -5,9 +5,9 @@ build_opts_fp <- function(opts = NULL){
   paste0("
          var options = ", opts, ";
          $.extend(options, {'afterLoad': function(origin, destination, direction){
-            Shiny.onInputChange('slide_origin', origin);
-            Shiny.onInputChange('slide_destination', destination);
-            Shiny.onInputChange('slide_direction', direction);
+            Shiny.onInputChange('fp_origin', origin);
+            Shiny.onInputChange('fp_destination', destination);
+            Shiny.onInputChange('fp_direction', direction);
          }});
          $(document).ready(function() {$('#fp').fullpage(options);});
         ")
@@ -21,8 +21,8 @@ build_opts_pp <- function(opts = NULL){
          var options = ", opts, ";
          console.log(options);
          $.extend(options, {'afterLoad': function(anchorLink, index){
-            Shiny.onInputChange('slide_anchor', anchorLink);
-            Shiny.onInputChange('slide_index', index);
+            Shiny.onInputChange('fp_anchor', anchorLink);
+            Shiny.onInputChange('fp_index', index);
          }});
          $(document).ready(function() {$('#fp').pagepiling(options)});
         ")
@@ -35,8 +35,8 @@ build_opts_mp <- function(opts = NULL){
          var options = ", opts, ";
          console.log(options);
          $.extend(options, {'afterLoad': function(anchorLink, index){
-            Shiny.onInputChange('slide_anchor', anchorLink);
-            Shiny.onInputChange('slide_index', index);
+            Shiny.onInputChange('fp_anchor', anchorLink);
+            Shiny.onInputChange('fp_index', index);
          }});
          $(document).ready(function() {$('#fp').multiscroll(options);});
         ")

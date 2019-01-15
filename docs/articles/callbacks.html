@@ -141,7 +141,7 @@
 <a class="sourceLine" id="cb1-10" data-line-number="10">  <span class="kw"><a href="../reference/fp.html">fullSection</a></span>(</a>
 <a class="sourceLine" id="cb1-11" data-line-number="11">    <span class="dt">menu =</span> <span class="st">"second"</span>,</a>
 <a class="sourceLine" id="cb1-12" data-line-number="12">    <span class="dt">center =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb1-13" data-line-number="13">    <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h3</a></span>(<span class="st">"Slice"</span>),</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">    <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/builder">h3</a></span>(<span class="st">"Slide"</span>),</a>
 <a class="sourceLine" id="cb1-14" data-line-number="14">    <span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/verbatimTextOutput">verbatimTextOutput</a></span>(<span class="st">"slide"</span>)</a>
 <a class="sourceLine" id="cb1-15" data-line-number="15">  )</a>
 <a class="sourceLine" id="cb1-16" data-line-number="16">)</a>
@@ -149,7 +149,7 @@
 <a class="sourceLine" id="cb1-18" data-line-number="18">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output){</a>
 <a class="sourceLine" id="cb1-19" data-line-number="19">  </a>
 <a class="sourceLine" id="cb1-20" data-line-number="20">  output<span class="op">$</span>slide &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/renderPrint">renderPrint</a></span>({</a>
-<a class="sourceLine" id="cb1-21" data-line-number="21">    input<span class="op">$</span>slide_origin <span class="co"># returns menu</span></a>
+<a class="sourceLine" id="cb1-21" data-line-number="21">    input<span class="op">$</span>fp_origin <span class="co"># returns menu</span></a>
 <a class="sourceLine" id="cb1-22" data-line-number="22">  })</a>
 <a class="sourceLine" id="cb1-23" data-line-number="23">  </a>
 <a class="sourceLine" id="cb1-24" data-line-number="24">}</a>
