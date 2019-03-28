@@ -180,35 +180,48 @@ multiPage <- function(..., opts = list(), menu = NULL){
 
   shiny::tags$html(
     shiny::tags$head(
-      shiny::includeCSS(
-        system.file("css/boostrap.min.css", package = "fullPage")
+      shiny::tags$link(
+        href = "fp-css/bootstrap.min.css",
+        rel = "stylesheet",
+        type = "text/css"
       ),
-      shiny::includeScript(
-        system.file("js/bootstrap.min.js", package = "fullPage")
+      shiny::tags$script(
+        src = "fp-js/bootstrap.min.js"
       ),
-      shiny::includeCSS(
-        system.file("css/jquery.multiscroll.min.css", package = "fullPage")
+      shiny::tags$link(
+        href = "fp-css/jquery.multiscroll.min.css",
+        rel = "stylesheet",
+        type = "text/css"
       ),
-      shiny::includeCSS(
-        system.file("css/normalize.min.css", package = "fullPage")
+      shiny::tags$link(
+        href = "fp-css/normalize.min.css",
+        rel = "stylesheet",
+        type = "text/css"
       ),
-      shiny::includeCSS(
-        system.file("css/milligram.min.css", package = "fullPage")
+      shiny::tags$link(
+        href = "fp-css/milligram.min.css",
+        rel = "stylesheet",
+        type = "text/css"
       ),
-      shiny::includeCSS(
-        system.file("css/styles.css", package = "fullPage")
+      shiny::tags$link(
+        href = "fp-css/styles.css",
+        rel = "stylesheet",
+        type = "text/css"
       ),
-      shiny::includeScript(
-        system.file("jquery-3.2.1/jquery.min.js", package = "fullPage")
+      shiny::tags$script(
+        src = "fp-jquery/jquery.min.js"
       ),
-      shiny::includeScript(
-        system.file("jquery-3.2.1/jquery.easing.min.js", package = "fullPage")
+      shiny::tags$script(
+        src = "fp-jquery/jquery.easing.min.js"
       ),
-      shiny::includeScript(
-        system.file("js/jquery.multiscroll.min.js", package = "fullPage")
+      shiny::tags$script(
+        src = "fp-js/scrolloverflow.min.js"
       ),
-      shiny::includeScript(
-        system.file("js/jquery.multiscroll.extensions.min.js", package = "fullPage")
+      shiny::tags$script(
+        src = "fp-js/jquery.multiscroll.min.js"
+      ),
+      shiny::tags$script(
+        src = "fp-js/jquery.multiscroll.extensions.min.js"
       )
     ),
     body
