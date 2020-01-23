@@ -7,17 +7,37 @@
 \alias{multiSectionPlot}
 \title{Use plot as background}
 \usage{
-fullSectionPlot(outputId, ..., menu = NULL, center = FALSE,
-  background = "rgba(255,255,255,0.5)")
+fullSectionPlot(
+  outputId,
+  ...,
+  menu = NULL,
+  center = FALSE,
+  background = "rgba(255,255,255,0.5)"
+)
 
-fullSlidePlot(outputId, ..., menu = NULL, center = FALSE,
-  background = "rgba(255,255,255,0.5)")
+fullSlidePlot(
+  outputId,
+  ...,
+  menu = NULL,
+  center = FALSE,
+  background = "rgba(255,255,255,0.5)"
+)
 
-pageSectionPlot(outputId, ..., menu = NULL, center = FALSE,
-  background = "rgba(255,255,255,0.5)")
+pageSectionPlot(
+  outputId,
+  ...,
+  menu = NULL,
+  center = FALSE,
+  background = "rgba(255,255,255,0.5)"
+)
 
-multiSectionPlot(outputId, ..., menu = NULL, center = FALSE,
-  background = "rgba(255,255,255,0.5)")
+multiSectionPlot(
+  outputId,
+  ...,
+  menu = NULL,
+  center = FALSE,
+  background = "rgba(255,255,255,0.5)"
+)
 }
 \arguments{
 \item{outputId}{id passed to \code{\link[shiny]{plotOutput}}.}

@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: shiny, jsonlite
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 URL: https://github.com/RinteRface/fullPage
 BugReports: https://github.com/RinteRface/fullPage/issues
 Suggests: 

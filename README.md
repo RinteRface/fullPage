@@ -52,14 +52,14 @@ demo("multiPage", package = "fullPage")
 
 **fullPage**
 
-- `input$fb_origin`: origin slide
-- `input$fb_destination`: destination slide
-- `input$fb_direction`: scroll direction
+- `input$slide_origin`: origin slide
+- `input$slide_destination`: destination slide
+- `input$slide_direction`: scroll direction
 
 **pagePiling & multiScroll**
 
-- `input$fp_anchor`: slide anchor
-- `input$fp_index`: slide index
+- `input$slide_anchor`: slide anchor
+- `input$slide_index`: slide index
 
 ```r
 library(shiny)

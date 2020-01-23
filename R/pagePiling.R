@@ -162,45 +162,29 @@ pagePiling <- function(..., sections.color, opts = list(), menu = NULL, center =
 
   shiny::tags$html(
     shiny::tags$head(
-      shiny::tags$link(
-        href = "fp-css/bootstrap.min.css",
-        rel = "stylesheet",
-        type = "text/css"
+      shiny::includeCSS(
+        system.file("css/boostrap.min.css", package = "fullPage")
       ),
-      shiny::tags$script(
-        src = "fp-js/bootstrap.min.js"
+      shiny::includeScript(
+        system.file("js/bootstrap.min.js", package = "fullPage")
       ),
-      shiny::tags$link(
-        href = "fp-css/jquery.pagepiling.min.css",
-        rel = "stylesheet",
-        type = "text/css"
+      shiny::includeCSS(
+        system.file("css/normalize.min.css", package = "fullPage")
       ),
-      shiny::tags$link(
-        href = "fp-css/normalize.min.css",
-        rel = "stylesheet",
-        type = "text/css"
+      shiny::includeCSS(
+        system.file("css/milligram.min.css", package = "fullPage")
       ),
-      shiny::tags$link(
-        href = "fp-css/milligram.min.css",
-        rel = "stylesheet",
-        type = "text/css"
+      shiny::includeCSS(
+        system.file("css/styles.css", package = "fullPage")
       ),
-      shiny::tags$link(
-        href = "fp-css/styles.css",
-        rel = "stylesheet",
-        type = "text/css"
+      shiny::includeCSS(
+        system.file("css/jquery.pagepiling.min.css", package = "fullPage")
       ),
-      shiny::tags$script(
-        src = "fp-jquery/jquery.min.js"
+      shiny::includeScript(
+        system.file("js/jquery.min.js", package = "fullPage")
       ),
-      shiny::tags$script(
-        src = "fp-jquery/jquery.easing.min.js"
-      ),
-      shiny::tags$script(
-        src = "fp-js/scrolloverflow.min.js"
-      ),
-      shiny::tags$script(
-        src = "fp-js/jquery.pagepiling.min.js"
+      shiny::includeScript(
+        system.file("js/jquery.pagepiling.min.js", package = "fullPage")
       ),
       shiny::tags$script(
         build_opts_pp(opts)

@@ -9,3 +9,4 @@
 pkgdown
 docs
 index.Rmd
+^\.vscode$
