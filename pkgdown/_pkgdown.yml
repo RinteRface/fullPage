@@ -25,6 +25,20 @@ navbar:
     - icon: fa-github fa-lg
       href: https://github.com/RinteRface/fullPage
 
+reference:
+  - title: "Fullpage"
+    desc: "Create a fullpage shiny app."
+    contents: 
+      - starts_with("full")
+  - title: "Multiscroll"
+    desc: "Create a multiscroll shiny app."
+    contents: 
+      - starts_with("multi")
+  - title: "Pagepiling"
+    desc: "Create a pagepile shiny app."
+    contents: 
+      - starts_with("page")
+
 authors:
   John Coene:
     href: http://john-coene.com

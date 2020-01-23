@@ -10,3 +10,4 @@ pkgdown
 docs
 index.Rmd
 ^\.vscode$
+test.R
