@@ -3,6 +3,7 @@
 #' Add rows and columns.
 #'
 #' @param ... any element.
+#' @param width Width of column.
 #'
 #' @details Wrap columns in row function, see examples.
 #'
@@ -58,9 +59,9 @@ fullRow <- function(...){
 
 #' @rdname fullGrid
 #' @export
-fullColumn <- function(...){
+fullColumn <- function(..., width = 6){
   shiny::tags$div(
-    class = "column",
+    class = paste0("col-md-", width),
     ...
   )
 }

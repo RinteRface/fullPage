@@ -162,18 +162,7 @@ pagePiling <- function(..., sections.color, opts = list(), menu = NULL, center =
 
   shiny::tags$html(
     shiny::tags$head(
-      shiny::includeCSS(
-        system.file("css/boostrap.min.css", package = "fullPage")
-      ),
-      shiny::includeScript(
-        system.file("js/bootstrap.min.js", package = "fullPage")
-      ),
-      shiny::includeCSS(
-        system.file("css/normalize.min.css", package = "fullPage")
-      ),
-      shiny::includeCSS(
-        system.file("css/milligram.min.css", package = "fullPage")
-      ),
+      shiny::bootstrapLib(),
       shiny::includeCSS(
         system.file("css/styles.css", package = "fullPage")
       ),

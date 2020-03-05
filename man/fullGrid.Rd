@@ -11,18 +11,20 @@
 \usage{
 fullRow(...)
 
-fullColumn(...)
+fullColumn(..., width = 6)
 
 pageRow(...)
 
-pageColumn(...)
+pageColumn(..., width = 6)
 
 multiRow(...)
 
-multiColumn(...)
+multiColumn(..., width = 6)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{width}{Width of column.}
 }
 \description{
 Add rows and columns.
