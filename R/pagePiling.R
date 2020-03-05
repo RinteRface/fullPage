@@ -170,7 +170,7 @@ pagePiling <- function(..., sections.color, opts = list(), menu = NULL, center =
         system.file("css/jquery.pagepiling.min.css", package = "fullPage")
       ),
       shiny::includeScript(
-        system.file("js/jquery.min.js", package = "fullPage")
+        system.file("jquery-3.2.1/jquery.min.js", package = "fullPage")
       ),
       shiny::includeScript(
         system.file("js/jquery.pagepiling.min.js", package = "fullPage")
