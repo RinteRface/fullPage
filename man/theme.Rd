@@ -40,38 +40,6 @@ Valid \code{theme}:
   \item{\code{yellow}}
 }
 }
-\examples{
-if(interactive()){
-
-  ui <- fullPage(
-
-    center = TRUE,
-
-    fullTheme("red"), # theme
-
-    fullSection(
-      center = TRUE,
-      h1("Themes")
-    ),
-    fullSection(
-      fullButtonTo("Move to first section", section = 1)
-    ),
-    fullSection(
-      center = TRUE,
-      fullSlide(
-        fullButtonRight("Slide right", clear = TRUE)
-      ),
-      fullSlide(
-        fullButtonLeft("Slide left", clear = TRUE)
-      )
-    )
-  )
-
-  server <- function(input, output){}
-
-  shinyApp(ui, server)
-}
-}
 \author{
 John Coene, \email{jcoenep@gmail.com}
 }

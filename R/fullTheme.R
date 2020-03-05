@@ -25,57 +25,13 @@
 #'   \item{\code{teal}}
 #'   \item{\code{yellow}}
 #' }
-#'
-#' @examples
-#' if(interactive()){
-#'
-#'   ui <- fullPage(
-#'
-#'     center = TRUE,
-#'
-#'     fullTheme("red"), # theme
-#'
-#'     fullSection(
-#'       center = TRUE,
-#'       h1("Themes")
-#'     ),
-#'     fullSection(
-#'       fullButtonTo("Move to first section", section = 1)
-#'     ),
-#'     fullSection(
-#'       center = TRUE,
-#'       fullSlide(
-#'         fullButtonRight("Slide right", clear = TRUE)
-#'       ),
-#'       fullSlide(
-#'         fullButtonLeft("Slide left", clear = TRUE)
-#'       )
-#'     )
-#'   )
-#'
-#'   server <- function(input, output){}
-#'
-#'   shinyApp(ui, server)
-#' }
+#' 
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #'
 #' @rdname theme
 #' @export
 fullTheme <- function(theme){
-  if(missing(theme))
-    stop("must pass theme.")
-
-  file <- paste0("themes/", theme, ".css")
-
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeCSS(
-          system.file(file, package = "fullPage")
-        )
-      )
-    )
-  )
+  .Deprecated("shinytheme", "shinythemes")
 }
 
 #' @rdname theme

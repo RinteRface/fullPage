@@ -11,8 +11,4 @@
     "fp-js",
     system.file("js", package = "fullPage")
   )
-  shiny::addResourcePath(
-    "fp-themes",
-    system.file("themes", package = "fullPage")
-  )
 }
