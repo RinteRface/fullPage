@@ -3,6 +3,7 @@
 #' Add a container.
 #'
 #' @param ... any element.
+#' @param class Class of element.
 #'
 #' @details Pass within your grid, sections or slides.
 #'
@@ -49,9 +50,10 @@
 #'
 #' @rdname container
 #' @export
-fullContainer <- function(...){
+fullContainer <- function(..., class = ""){
+  cl <- paste("container", class)
   shiny::tags$div(
-    class = "container",
+    class = cl,
     ...
   )
 }

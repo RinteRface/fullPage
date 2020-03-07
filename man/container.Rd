@@ -6,14 +6,16 @@
 \alias{multiContainer}
 \title{Add containers}
 \usage{
-fullContainer(...)
+fullContainer(..., class = "")
 
-pageContainer(...)
+pageContainer(..., class = "")
 
-multiContainer(...)
+multiContainer(..., class = "")
 }
 \arguments{
 \item{...}{any element.}
+
+\item{class}{Class of element.}
 }
 \description{
 Add a container.
