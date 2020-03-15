@@ -1,5 +1,5 @@
 Package: fullPage
-Title: Three Families of Functions for Three Different Single Page Shiny Apps
+Title: Three Families of Functions for Three Different Single Page 'Shiny' Apps
 Version: 0.1.0
 Authors@R: c(
   person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre")),
@@ -7,7 +7,7 @@ Authors@R: c(
   person(family = "jQuery Foundation", role = "cph"),
   person("CJ", family = "Patoilo", role = "cph"),
   person("Alvaro", "Trigo", role = "cph"))
-Description: Includes functions to build three full scrolling single page websites/apps with shiny.
+Description: Includes functions to build three full scrolling single page applications with 'Shiny'.
 License: MIT + file LICENSE
 Date: 2020-03-14
 Encoding: UTF-8
