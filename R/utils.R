@@ -63,5 +63,6 @@ build_section <- function(menu = NULL, center = FALSE, class, ...){
 }
 
 rand <- function(){
-  paste0(tolower(sample(c(LETTERS, 1:9), 26 + 9)), collapse = "")
+  rand_id <- paste0(tolower(sample(c(LETTERS, 1:9), 26 + 9)), collapse = "")
+  paste0(sample(letters,1),rand_id)
 }
