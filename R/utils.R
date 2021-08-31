@@ -5,13 +5,11 @@ build_opts_fp <- function(opts = NULL){
   paste0("
          var options = ", opts, ";
          $.extend(options, {'afterLoad': function(origin, destination, direction){
-            $(document).on('shiny:connected', function(event) {
-              Shiny.onInputChange('fp_origin', origin);
-              Shiny.onInputChange('fp_destination', destination);
-              Shiny.onInputChange('fp_direction', direction);
-            });
+            Shiny.setInputValue('fp_origin', origin, {priority: 'event'});
+            Shiny.setInputValue('fp_destination', destination, {priority: 'event'});
+            Shiny.setInputValue('fp_direction', direction, {priority: 'event'});
          }});
-         $(document).ready(function() {$('#fp').fullpage(options);});
+          $(document).on('shiny:connected', function(event) {$('#fp').fullpage(options);});
         ")
 }
 
@@ -22,12 +20,10 @@ build_opts_pp <- function(opts = NULL){
   paste0("
          var options = ", opts, ";
          $.extend(options, {'afterLoad': function(anchorLink, index){
-          $(document).on('shiny:connected', function(event) {
-            Shiny.onInputChange('fp_anchor', anchorLink);
-            Shiny.onInputChange('fp_index', index);
-          });
+            Shiny.setInputValue('fp_anchor', anchorLink, {priority: 'event'});
+            Shiny.setInputValue('fp_index', index, {priority: 'event'});
          }});
-         $(document).ready(function() {$('#fp').pagepiling(options)});
+         $(document).on('shiny:connected', function(event) {$('#fp').pagepiling(options)});
         ")
 }
 
